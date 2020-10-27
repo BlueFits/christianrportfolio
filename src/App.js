@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useCallback } from 'react';
+import { useTransition, animated, config } from 'react-spring';
 
-function App() {
+//Components
+import Splash from "./components/Splash";
+
+const App = () => {
+
+  //Transition Hooks
+  const [sectionIndex, setSectionIndex] = useState(0)
+  const [transition, setTransition] = useState({
+    config: config.slow,
+    from: { opacity: 1, transform: 'translate3d(0,100%,0)' },
+    enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+    leave: { opacity: 1, transform: 'translate3d(0,-100%,0)' },
+  });
+
+  //Transition config
+  const transitions = useTransition(sectionIndex, p => p, transition)
+
+  //Methods
+  const onClick = useCallback(() => setSectionIndex(state => (state + 1) % 3), []);
+
+  //Renders
+  const pages = [
+    ({ style }) => <animated.section style={{ ...style, background: 'lightpink' }}>A</animated.section>,
+    ({ style }) => <animated.section style={{ ...style, background: 'lightblue' }}>B</animated.section>,
+    ({ style }) => <animated.section style={{ ...style, background: 'lightgreen' }}>C</animated.section>,
+  ]
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main_container" onClick={onClick}>
+      {/* <Splash /> */}
+      {transitions.map(({ item, props, key }) => {
+        const Page = pages[item]
+        return <Page key={key} style={props} />
+      })}
     </div>
-  );
+  )
 }
 
 export default App;
