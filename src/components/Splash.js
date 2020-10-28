@@ -45,7 +45,7 @@ const Splash = () => {
 
     useChain([progressRef, elementRef, splashRef], [2, 6, 6.5]);
     return(      
-        <animated.div style={splashAnim} className='splash_styles'>
+        <animated.div style={{ ...splashAnim, overflowY: "hidden" }} className='splash_styles'>
             <animated.div style={elementSpring} className="splash_elements_container">
                 <div className="cog_loading_container">
                     <animated.div style={cogSpring} className="splash_cog">

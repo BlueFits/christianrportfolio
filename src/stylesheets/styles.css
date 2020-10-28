@@ -6,6 +6,7 @@
 
 body { 
     font-family: sans-serif;
+    overflow: hidden;
 }
 
 h1 {
@@ -38,16 +39,12 @@ p {
     z-index: 2;
 }
 
-.main_container > section {
-    cursor: pointer;
+.main_container > div {
     position: absolute;
     width: 100%;
     height: 100%;
-    color: white;
-    font-weight: 800;
-    font-size: 25em;
     will-change: transform, opacity;
-    text-shadow: 0px 2px 40px #00000020, 0px 2px 5px #00000030;
+    overflow-y: scroll;
 }
 
 .splash_elements_container {
@@ -97,4 +94,8 @@ p {
 
 .splash_header {
     margin: 30px 0 20px 0;
+}
+
+.home_section {
+    width: 100%;
 }

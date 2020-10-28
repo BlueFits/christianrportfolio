@@ -1,5 +1,9 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useTransition, animated, config } from 'react-spring';
+
+//Pages
+import Home from "./pages/Home";
+import Construction from "./pages/Construction";
 
 //Components
 import Splash from "./components/Splash";
@@ -19,22 +23,26 @@ const App = () => {
   const transitions = useTransition(sectionIndex, p => p, transition)
 
   //Methods
-  const onClick = useCallback(() => setSectionIndex(state => (state + 1) % 3), []);
+  // const onClick = useCallback(() => setSectionIndex(state => (state + 1) % 3), []);
 
   //Renders
   const pages = [
-    ({ style }) => <animated.section style={{ ...style, background: 'lightpink' }}>A</animated.section>,
-    ({ style }) => <animated.section style={{ ...style, background: 'lightblue' }}>B</animated.section>,
-    ({ style }) => <animated.section style={{ ...style, background: 'lightgreen' }}>C</animated.section>,
+    ({ style }) => <animated.div style={{ ...style, background: 'lightpink' }}>
+      <Home/>
+    </animated.div>,
+    ({ style }) => <animated.div style={{ ...style, background: 'lightblue' }}>B</animated.div>,
+    ({ style }) => <animated.div style={{ ...style, background: 'lightgreen' }}>C</animated.div>,
   ]
 
   return (
-    <div className="main_container" onClick={onClick}>
-      {/* <Splash /> */}
-      {transitions.map(({ item, props, key }) => {
+    <div className="main_container">
+      <Splash />
+      <Construction />
+      {/* {transitions.map(({ item, props, key }) => {
         const Page = pages[item]
         return <Page key={key} style={props} />
-      })}
+      })} */}
+
     </div>
   )
 }
