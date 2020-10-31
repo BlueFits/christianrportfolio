@@ -27,7 +27,7 @@ const App = () => {
 
   //Renders
   const pages = [
-    ({ style }) => <animated.div style={{ ...style, background: 'lightpink' }}>
+    ({ style }) => <animated.div style={{ ...style }}>
       <Home/>
     </animated.div>,
     ({ style }) => <animated.div style={{ ...style, background: 'lightblue' }}>B</animated.div>,
@@ -42,7 +42,6 @@ const App = () => {
         const Page = pages[item]
         return <Page key={key} style={props} />
       })} */}
-
     </div>
   )
 }
