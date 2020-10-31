@@ -37,11 +37,10 @@ const App = () => {
   return (
     <div className="main_container">
       <Splash />
-      <Construction />
-      {/* {transitions.map(({ item, props, key }) => {
+      {transitions.map(({ item, props, key }) => {
         const Page = pages[item]
         return <Page key={key} style={props} />
-      })} */}
+      })}
     </div>
   )
 }
