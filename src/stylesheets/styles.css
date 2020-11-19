@@ -126,6 +126,9 @@ nav {
 .home_section {
     width: 100%;
     background-color: var(--primary_color);
+    background-image: url(../assets/images/bg.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 header {
@@ -158,4 +161,11 @@ header {
     background-color: var(--primary_color);
     text-align: center;
     color: #fff;
+}
+
+.home_about {
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    min-height: 500px;
 }

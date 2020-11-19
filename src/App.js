@@ -27,7 +27,7 @@ const App = () => {
 
   //Renders
   const pages = [
-    ({ style }) => <animated.div style={{ ...style }}>
+    ({ style }) => <animated.div id ="home" style={{ ...style }}>
       <Home/>
     </animated.div>,
     ({ style }) => <animated.div style={{ ...style, background: 'lightblue' }}>B</animated.div>,
@@ -36,7 +36,7 @@ const App = () => {
 
   return (
     <div className="main_container">
-      <Splash />
+      {/* <Splash /> */}
       {transitions.map(({ item, props, key }) => {
         const Page = pages[item]
         return <Page key={key} style={props} />

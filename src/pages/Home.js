@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { HiMenuAlt4 } from "react-icons/hi";
+
+import Parallax from "../components/Parallax";
 
 import CompSci from "../assets/images/CompSci.svg";
 
 const Home = () => {
+    //Modularize this
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = document.getElementById("home").scrollTop;
+            document.getElementById("parallax").style.backgroundPositionY = (offset * -0.1) + "px";
+        };
+        document.getElementById("home").addEventListener("scroll", handleScroll);
+        return () => document.getElementById("home").removeEventListener("scroll", handleScroll);
+    }, []);
+
     return (
-        <section className="home_section">
+        <section id="parallax" className="home_section">
             <nav>
                 <ul className="nav_li_container">
                     <li><AnchorLink className="anchorLink_style" herf="#">Christian Rojas</AnchorLink></li>
@@ -27,8 +39,14 @@ const Home = () => {
                     </div>
                 </div>
             </header>
+            <div className="home_about">
+                {/* <Parallax id="home" percentage={0.2}>
+                    <h1>Salut</h1>
+                </Parallax> */}
+                <h1>Salut</h1>
+            </div>
         </section>
     );
 };
 
-export default Home
+export default Home;
