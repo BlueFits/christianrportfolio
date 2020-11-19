@@ -1,24 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { HiMenuAlt4 } from "react-icons/hi";
 
-import Parallax from "../components/Parallax";
+import ParallaxEffect from "../effects/ParallaxEvent";
+
+import SmallHeader from "../components/SmallHeader";
+import NextTab from "../components/NextTab";
 
 import CompSci from "../assets/images/CompSci.svg";
+import Colors from "../constants/Colors";
 
 const Home = () => {
-    //Modularize this
-    useEffect(() => {
-        const handleScroll = () => {
-            const offset = document.getElementById("home").scrollTop;
-            document.getElementById("parallax").style.backgroundPositionY = (offset * -0.1) + "px";
-        };
-        document.getElementById("home").addEventListener("scroll", handleScroll);
-        return () => document.getElementById("home").removeEventListener("scroll", handleScroll);
-    }, []);
+
+    useEffect(() => ParallaxEffect("home", "home_parallax", 0.1), [ParallaxEffect]);
 
     return (
-        <section id="parallax" className="home_section">
+        <section id="home_parallax" className="home_section">
             <nav>
                 <ul className="nav_li_container">
                     <li><AnchorLink className="anchorLink_style" herf="#">Christian Rojas</AnchorLink></li>
@@ -40,10 +37,23 @@ const Home = () => {
                 </div>
             </header>
             <div className="home_about">
-                {/* <Parallax id="home" percentage={0.2}>
-                    <h1>Salut</h1>
-                </Parallax> */}
-                <h1>Salut</h1>
+                <SmallHeader text="What I Do"/>
+                <div className="center_text">
+                    <p>
+                        Hi there! I'm Christian, a 21 year old from Toronto, Canada. Coding has been a hobby of mine ever since 
+                        I was a kid. What started from playing around with java, doing simple applications, developed in to a 
+                        love for programming.
+                    </p>
+
+                    <img alt="profile-photo"/>
+
+                    <p>Today I am able to develop computer and mobile applications with languages like java and c++.</p>
+                    <p>
+                        Web development is also one of my passions. I love the whole process, from designing, 
+                        all the way to development. Creating unique and pleasant website experiences is what I'm all about.
+                    </p>
+                    <p>For a complete summary of all my skills refer to my portfolio.</p>
+                </div>
             </div>
         </section>
     );

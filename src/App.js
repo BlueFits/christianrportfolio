@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useTransition, animated, config } from 'react-spring';
 
 //Pages
@@ -7,6 +7,9 @@ import Construction from "./pages/Construction";
 
 //Components
 import Splash from "./components/Splash";
+import NextTab from "./components/NextTab";
+
+import Colors from './constants/Colors';
 
 const App = () => {
 
@@ -23,12 +26,13 @@ const App = () => {
   const transitions = useTransition(sectionIndex, p => p, transition)
 
   //Methods
-  // const onClick = useCallback(() => setSectionIndex(state => (state + 1) % 3), []);
+  const nextFunction = useCallback(() => setSectionIndex(state => (state + 1) % 3), []);
 
   //Renders
   const pages = [
-    ({ style }) => <animated.div id ="home" style={{ ...style }}>
-      <Home/>
+    ({ style }) => <animated.div id ="home" style={{ ...style }} >
+      <Home />
+      <NextTab onClick={nextFunction} text="Next: Blogs" color={Colors.secondary}/>
     </animated.div>,
     ({ style }) => <animated.div style={{ ...style, background: 'lightblue' }}>B</animated.div>,
     ({ style }) => <animated.div style={{ ...style, background: 'lightgreen' }}>C</animated.div>,

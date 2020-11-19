@@ -1,17 +1,21 @@
+/*
+    id - id of element that has the offset
+    percetage - speed of parallax
+*/
 import React, { useEffect, useState } from "react";
 
-const Parallax = ({ children, id, percentage }) => {
+const Parallax = ({ children, offsetId, percentage }) => {
 
     const [offsetY, setOffsetY] = useState(0);
 
     useEffect(() => {
-        const handleScroll = () => setOffsetY(document.getElementById(id).scrollTop);
-        document.getElementById(id).addEventListener("scroll", handleScroll);
-        return () => document.getElementById(id).removeEventListener("scroll", handleScroll);
+        const handleScroll = () => setOffsetY(document.getElementById(offsetId).scrollTop);
+        document.getElementById(offsetId).addEventListener("scroll", handleScroll);
+        return () => document.getElementById(offsetId).removeEventListener("scroll", handleScroll);
     }, [offsetY]);
 
     return (
-        <div style={{ transform: `translateY(${offsetY * percentage}px)`, border: "1px solid red" }}>
+        <div style={{ transform: `translateY(${offsetY * percentage}px)`}}>
             {children}
         </div>
     );
