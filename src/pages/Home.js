@@ -5,10 +5,8 @@ import { HiMenuAlt4 } from "react-icons/hi";
 import ParallaxEffect from "../effects/ParallaxEvent";
 
 import SmallHeader from "../components/SmallHeader";
-import NextTab from "../components/NextTab";
 
 import CompSci from "../assets/images/CompSci.svg";
-import Colors from "../constants/Colors";
 
 const Home = () => {
 

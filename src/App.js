@@ -3,6 +3,8 @@ import { useTransition, animated, config } from 'react-spring';
 
 //Pages
 import Home from "./pages/Home";
+import Blogs from "./pages/Blogs";
+import Project from "./pages/Projects";
 import Construction from "./pages/Construction";
 
 //Components
@@ -32,10 +34,15 @@ const App = () => {
   const pages = [
     ({ style }) => <animated.div id ="home" style={{ ...style }} >
       <Home />
-      <NextTab onClick={nextFunction} text="Next: Blogs" color={Colors.secondary}/>
+      <NextTab onClick={nextFunction} text="Next: Blogs" color={Colors.secondary} textColor="#fff"/>
     </animated.div>,
-    ({ style }) => <animated.div style={{ ...style, background: 'lightblue' }}>B</animated.div>,
-    ({ style }) => <animated.div style={{ ...style, background: 'lightgreen' }}>C</animated.div>,
+    ({ style }) => <animated.div style={{ ...style, background: Colors.lightgrey }}>
+      <Blogs />
+      <NextTab onClick={nextFunction} text="Next: Projects" color={Colors.lightgrey} textColor="#474747" />
+    </animated.div>,
+    ({ style }) => <animated.div style={{ ...style, background: 'lightgreen' }}>
+      <Project />
+    </animated.div>,
   ]
 
   return (
