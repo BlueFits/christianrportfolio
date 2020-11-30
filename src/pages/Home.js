@@ -10,7 +10,7 @@ import CompSci from "../assets/images/CompSci.svg";
 
 const Home = () => {
 
-    useEffect(() => ParallaxEffect("home", "home_parallax", 0.1), [ParallaxEffect]);
+    useEffect(() => ParallaxEffect("home", "home_parallax", 0.15), [ParallaxEffect]);
 
     return (
         <section id="home_parallax" className="home_section">
