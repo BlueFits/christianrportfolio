@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useTransition, animated, config } from 'react-spring';
 
 //Pages
@@ -15,43 +15,63 @@ import Colors from './constants/Colors';
 
 const App = () => {
 
-  //Transition Hooks
-  const [sectionIndex, setSectionIndex] = useState(0)
-  const [transition, setTransition] = useState({
-    config: config.slow,
-    from: { opacity: 1, transform: 'translate3d(0,100%,0)' },
-    enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
-    leave: { opacity: 1, transform: 'translate3d(0,-100%,0)' },
-  });
+  const [transition, setTransition] = useState([
+    "current_page",
+    "next_page",
+    "next_page",
+    "next_page",
+  ]);
 
-  //Transition config
-  const transitions = useTransition(sectionIndex, p => p, transition)
-
-  //Methods
-  const nextFunction = useCallback(() => setSectionIndex(state => (state + 1) % 3), []);
-
-  //Renders
-  const pages = [
-    ({ style }) => <animated.div id ="home" style={{ ...style }} >
-      <Home />
-      <NextTab onClick={nextFunction} text="Next: Blogs" color={Colors.secondary} textColor="#fff"/>
-    </animated.div>,
-    ({ style }) => <animated.div style={{ ...style, background: Colors.lightgrey }}>
-      <Blogs />
-      <NextTab onClick={nextFunction} text="Next: Projects" color={Colors.lightgrey} textColor="#474747" />
-    </animated.div>,
-    ({ style }) => <animated.div style={{ ...style, background: 'lightgreen' }}>
-      <Project />
-    </animated.div>,
-  ]
+  //Handlers
+  const pageHandler = (motion) => {
+    let arrClone = [...transition];
+    const i = arrClone.indexOf("current_page");
+    let temp = arrClone[i];
+    if (motion === "next" && arrClone[i + 1]) {
+      arrClone[i + 1] = temp;
+      arrClone[i] = "";
+      setTransition(arrClone);
+    } else if (motion === "prev" && (arrClone[i - 1] === "")) {
+      arrClone[i - 1] = temp;
+      arrClone[i] = "next_page";
+      setTransition(arrClone);
+    }
+  }
 
   return (
-    <div className="main_container">
-      {/* <Splash /> */}
-      {transitions.map(({ item, props, key }) => {
-        const Page = pages[item]
-        return <Page key={key} style={props} />
-      })}
+    <div>
+      <div className={`section_container ${transition[0]}`} id="home">
+        <Home />
+        <NextTab 
+          text="Next: Blogs"
+          color={Colors.secondary}
+          textColor="#fff"
+          onClick={pageHandler.bind(this, "next")}
+        />
+      </div>
+      <div className={`section_container ${transition[1]}`}>
+        <Blogs />
+        <NextTab 
+          text="Next: Blogs"
+          color={Colors.lightgrey}
+          textColor={Colors.darkgrey}
+          onClick={pageHandler.bind(this, "next")}
+        />
+      </div>
+      <div className={`section_container ${transition[2]}`}>
+        <Project />
+        <NextTab 
+          text="Next: Contact"
+          color={Colors.lightblue}
+          textColor="#fff"
+          onClick={pageHandler.bind(this, "next")}
+        />
+      </div>
+      <div className={`section_container ${transition[3]}`}>
+        <section>
+          <h1>Salut</h1>
+        </section>
+      </div>
     </div>
   )
 }
