@@ -32,6 +32,7 @@ p {
     --secondary_color: #3aafa9;
     --lightgrey: #F4F4F4;
     --darkgrey: #474747;
+    --lightblue: #99CCFF;
 
 }
 
@@ -352,4 +353,164 @@ header {
 
 .project_description > p {
     margin-top: 5px;
+}
+
+.contact_section {
+    min-height: 100vh;
+    background-color: var(--lightblue);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 100px 0;
+    position: relative;
+}
+
+.contact_form_container {
+    width: 1200px;
+    height: 1400px;
+    border-radius: 80px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.contact_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--darkgrey);
+    height: 100%;
+}
+
+.contact_header_desc {
+    margin-top: 15px;
+    width: 370px;
+    text-align: center;
+}
+
+.contact_body,
+.contact_socials {
+    width: 100%;
+    padding: 0 7%;
+}
+
+.contact_body {
+    display: flex;
+    margin: 5% 0;
+}
+
+.contact_info {
+    width: 50%;
+}
+
+.contact_form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_form > input,
+.contact_form > textarea,
+.contact_cta {
+    margin: 15px 0;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+}
+
+.contact_form > input {
+    outline: none;
+    padding: 15px;
+    height: 50px;
+    border: none;
+    background-color: #f4f4f4;
+}
+
+.contact_form > textarea {
+    outline: none;
+    border: none;
+    background-color: #f4f4f4;
+    height: 150px;
+    resize: none;
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    padding: 15px;
+}
+
+.contact_cta {
+    height: 50px;
+    width: 150px;
+    border: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.contact_socials {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+.contact_transition {
+    width: 100%;
+    height: 1000px;
+    position: absolute;
+    bottom: 0;
+    background-image: url(../assets/images/blueTransitional.svg);
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+footer {
+    background-color: var(--primary_color);
+    padding: 0 4% 0 4%;
+
+}
+
+.footer_contents {
+    display: flex;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    padding: 100px 0;
+}
+
+.footer_header,
+.footer_nav {
+    width: 50%;
+}
+
+.footer_header > h1 {
+    width: 700px;
+}
+
+.footer_header > p {
+    margin-top: 50px;
+    font-size: 28px;
+}
+
+.footer_nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.footer_nav > li:nth-of-type(1) {
+    margin: 0 0 10px 0;
+}
+
+.footer_nav > li {
+    margin: 10px 0;
+}
+
+.footer_disclaimer {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    color: #fff;
 }

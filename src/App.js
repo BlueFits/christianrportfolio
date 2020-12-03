@@ -5,6 +5,8 @@ import { useTransition, animated, config } from 'react-spring';
 import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import Project from "./pages/Projects";
+import Contact from "./pages/Contact";
+import Footer from "./pages/Footer";
 import Construction from "./pages/Construction";
 
 //Components
@@ -68,9 +70,8 @@ const App = () => {
         />
       </div>
       <div className={`section_container ${transition[3]}`}>
-        <section>
-          <h1>Salut</h1>
-        </section>
+        <Contact />
+        <Footer />
       </div>
     </div>
   )
