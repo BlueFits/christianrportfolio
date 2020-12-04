@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTransition, animated, config } from 'react-spring';
 
 //Pages
+import NavMenu from "./pages/NavMenu";
 import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import Project from "./pages/Projects";
@@ -24,6 +25,8 @@ const App = () => {
     "next_page",
   ]);
 
+  const [isNavShowing, setIsNavShowing] = useState(false);
+
   //Handlers
   const pageHandler = (motion) => {
     let arrClone = [...transition];
@@ -40,10 +43,15 @@ const App = () => {
     }
   }
 
+  const navHandler = () => {
+    setIsNavShowing(!isNavShowing);
+  }
+
   return (
     <div>
-      <div className={`section_container ${transition[0]}`} id="home">
-        <Home />
+      {isNavShowing ? <NavMenu onClick={navHandler} /> : <div/>}
+      <div style={{ zIndex: 3 }} className={`section_container ${transition[0]}`} id="home">
+        <Home navHandler={navHandler} />
         <NextTab 
           text="Next: Blogs"
           color={Colors.secondary}
@@ -51,7 +59,7 @@ const App = () => {
           onClick={pageHandler.bind(this, "next")}
         />
       </div>
-      <div className={`section_container ${transition[1]}`}>
+      <div style={{ zIndex: 2 }} className={`section_container ${transition[1]}`}>
         <Blogs />
         <NextTab 
           text="Next: Blogs"
@@ -60,7 +68,7 @@ const App = () => {
           onClick={pageHandler.bind(this, "next")}
         />
       </div>
-      <div className={`section_container ${transition[2]}`}>
+      <div style={{ zIndex: 1 }} className={`section_container ${transition[2]}`}>
         <Project />
         <NextTab 
           text="Next: Contact"
@@ -69,7 +77,7 @@ const App = () => {
           onClick={pageHandler.bind(this, "next")}
         />
       </div>
-      <div className={`section_container ${transition[3]}`}>
+      <div style={{ zIndex: 0 }} className={`section_container ${transition[3]}`}>
         <Contact />
         <Footer />
       </div>

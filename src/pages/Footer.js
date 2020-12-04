@@ -6,7 +6,7 @@ const Footer = () => {
             <div className="footer_contents">
                 <div className="footer_header">
                     <h1>You only have one chance to make a first impression.</h1>
-                    <p>Let's make it an amazing one.</p>
+                    <p><strong>Let's make it an amazing one.</strong></p>
                 </div>
                 <ul className="footer_nav">
                     <li>About Me</li>

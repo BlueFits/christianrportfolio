@@ -51,7 +51,7 @@ p {
     align-items: center;
     background-color: var(--secondary_color);
     position: fixed;
-    z-index: 2;
+    z-index: 5;
 }
 
 .section_container {
@@ -65,13 +65,13 @@ p {
 }
 
 .current_page {
-    z-index: 1;
+    /* z-index: 1; */
     transform: translateY(0);
 }
 
 .next_page {
-    z-index: 0;
-    transform: translateY(100vh);
+    /* z-index: 0; */
+    transform: translateY(0);
 }
 
 .splash_elements_container {
@@ -130,6 +130,101 @@ nav {
     height: 70px;
     color: #fff;
     padding: 0 4%;
+}
+
+.nav_button {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;
+}
+
+.nav_menu_close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+}
+
+.nav_menu {
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    position: fixed;
+    z-index: 5;
+    display: flex;
+    position: relative;
+}
+
+.nav_illustration {
+    width: 21%;
+    height: 100%;
+    background-color: var(--primary_color);
+}
+
+.nav_content {
+    width: 79%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nav_inner {
+    width: 900px;
+    display: flex;
+    height: 500px;
+}
+
+.nav_info {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.nav_menu_socials {
+    display: flex;
+}
+
+.nav_menu_socials > div:first-of-type {
+    margin-left: 0;
+}
+
+.nav_menu_socials > div {
+    display: flex;
+    margin: 0 40px;
+}
+
+.nav_menu_socials > div > p,
+.nav_personal_info > div > p {
+    font-size: 21px;
+}
+
+.nav_inner > ul {
+    width: 50%;
+    list-style: none;
+}
+
+.nav_inner > ul > li:first-of-type {
+    margin-top: 0;
+}
+
+.nav_inner > ul > li {
+    margin: 15px 0;
+}
+
+.nav_button:hover {
+    transform: translateY(-2px);
+}
+
+.nav_button:active {
+    transform: translateY(0);
 }
 
 .nav_li_container {
@@ -468,15 +563,18 @@ header {
 
 footer {
     background-color: var(--primary_color);
-    padding: 0 4% 0 4%;
-
+    /* padding: 0 4% 0 4%; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer_contents {
     display: flex;
     color: #fff;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #2F4E58;
     padding: 100px 0;
+    width: 1200px;
 }
 
 .footer_header,
@@ -506,11 +604,12 @@ footer {
 
 .footer_nav > li {
     margin: 10px 0;
+    font-size: 18px;
 }
 
 .footer_disclaimer {
     display: flex;
     justify-content: center;
-    padding: 20px 0;
+    padding: 50px 0;
     color: #fff;
 }

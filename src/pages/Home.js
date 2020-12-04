@@ -8,7 +8,7 @@ import SmallHeader from "../components/SmallHeader";
 
 import CompSci from "../assets/images/CompSci.svg";
 
-const Home = () => {
+const Home = ({ navHandler }) => {
 
     useEffect(() => ParallaxEffect("home", "home_parallax", 0.15), [ParallaxEffect]);
 
@@ -20,8 +20,8 @@ const Home = () => {
                     <li><a className="link_styles" href="#">Instagram</a></li>
                     <li><a className="link_styles" href="#">LinkedIn</a></li>
                 </ul>
-                <div>
-                    <HiMenuAlt4 size={28}/>
+                <div onClick={navHandler} unselectable="on">
+                    <HiMenuAlt4 size={28} className="nav_button"/>
                 </div>
             </nav>
             <header>
