@@ -25,7 +25,7 @@ const App = () => {
     "next_page",
   ]);
 
-  const [isNavShowing, setIsNavShowing] = useState(false);
+  const [navMenuStatus, setNavMenuStatus] = useState("nav_menu_hide");
 
   //Handlers
   const pageHandler = (motion) => {
@@ -44,12 +44,16 @@ const App = () => {
   }
 
   const navHandler = () => {
-    setIsNavShowing(!isNavShowing);
+    if (navMenuStatus === "nav_menu_hide") {
+      setNavMenuStatus("");
+    } else {
+      setNavMenuStatus("nav_menu_hide");
+    }
   }
 
   return (
     <div>
-      {isNavShowing ? <NavMenu onClick={navHandler} /> : <div/>}
+      <NavMenu onClick={navHandler} navStatus={navMenuStatus} />
       <div style={{ zIndex: 3 }} className={`section_container ${transition[0]}`} id="home">
         <Home navHandler={navHandler} />
         <NextTab 

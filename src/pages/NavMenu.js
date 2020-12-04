@@ -1,12 +1,14 @@
 import React from "react";
-import { GrClose } from "react-icons/gr";
+import { AiFillCloseCircle } from "react-icons/ai";
 
-const NavMenu = ({ onClick }) => {
+import Colors from "../constants/Colors";
+
+const NavMenu = ({ onClick, navStatus }) => {
     return (
-        <div className="nav_menu">
+        <div className={`nav_menu ${navStatus}`}>
             <div className="nav_illustration"></div>
             <div className="nav_content">
-                <GrClose onClick={onClick} className="nav_menu_close" color="#000" size={28} />
+                <AiFillCloseCircle onClick={onClick} className="nav_menu_close" color={Colors.primary} size={65} />
                 <div className="nav_inner">
                     <div className="nav_info">
                         <div className="nav_personal_info">
@@ -27,11 +29,11 @@ const NavMenu = ({ onClick }) => {
                         <div className="nav_menu_socials">
                             <div>
                                 <img/>
-                                <p>Dribbble</p>
+                                <a href="#" className="menu_socials_text">Dribbble</a>
                             </div>
                             <div>
                                 <img/>
-                                <p>Instagram</p>
+                                <a href="#" className="menu_socials_text">Instagram</a>
                             </div>
                         </div>
                     </div>
