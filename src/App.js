@@ -25,6 +25,14 @@ const App = () => {
     "next_page",
   ]);
 
+  const [textStatus, setTextStatus] = useState([
+    "hide_text", 
+    "hide_text", 
+    "hide_text",
+    "hide_text"
+  ]);
+
+
   const [navMenuStatus, setNavMenuStatus] = useState("nav_menu_hide");
 
   //Handlers
@@ -45,15 +53,59 @@ const App = () => {
 
   const navHandler = () => {
     if (navMenuStatus === "nav_menu_hide") {
+      setTimeout(() => {
+        setTextStatus([
+          "",
+          "hide_text",
+          "hide_text",
+          "hide_text",
+        ]);
+      }, 400);
+
+      setTimeout(() => {
+        setTextStatus([
+          "",
+          "",
+          "hide_text",
+          "hide_text",
+        ]);
+      }, 500);
+
+      setTimeout(() => {
+        setTextStatus([
+          "",
+          "",
+          "",
+          "hide_text",
+        ]);
+      }, 600);
+
+      setTimeout(() => {
+        setTextStatus([
+          "",
+          "",
+          "",
+          "",
+        ]);
+      }, 700);
+
       setNavMenuStatus("");
     } else {
       setNavMenuStatus("nav_menu_hide");
+      setTimeout(() =>{
+        setTextStatus([
+          "hide_text",
+          "hide_text",
+          "hide_text",
+          "hide_text",
+        ]);
+      }, 600);
     }
   }
 
   return (
     <div>
-      <NavMenu onClick={navHandler} navStatus={navMenuStatus} />
+      <NavMenu onClick={navHandler} navStatus={navMenuStatus} textStatus={textStatus}/>
       <div style={{ zIndex: 3 }} className={`section_container ${transition[0]}`} id="home">
         <Home navHandler={navHandler} />
         <NextTab 

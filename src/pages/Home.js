@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { HiMenuAlt4 } from "react-icons/hi";
+import TextLoop from "react-text-loop";
 
 import ParallaxEffect from "../effects/ParallaxEvent";
 
@@ -10,7 +11,7 @@ import CompSci from "../assets/images/CompSci.svg";
 
 const Home = ({ navHandler }) => {
 
-    useEffect(() => ParallaxEffect("home", "home_parallax", 0.15), [ParallaxEffect]);
+    useEffect(() => ParallaxEffect("home", "home_parallax", 0.20), [ParallaxEffect]);
 
     return (
         <section id="home_parallax" className="home_section">
@@ -30,7 +31,15 @@ const Home = ({ navHandler }) => {
                         <img height="100%" src={CompSci} alt="compSci.svg"/>
                     </div>
                     <div className="header_text">
-                        <h1>Hello, my name's Christian. I am a software engineer</h1>
+                        <h1>
+                            Hello, my name's Christian. I am a &nbsp;
+                            <TextLoop>
+                                <span>software engineer</span>
+                                <span>Web Developer</span>
+                                <span>Backend Developer</span>
+                            </TextLoop>
+                            .
+                        </h1>
                     </div>
                 </div>
             </header>
@@ -43,7 +52,7 @@ const Home = ({ navHandler }) => {
                         love for programming.
                     </p>
 
-                    <img alt="profile-photo"/>
+                    <img className="profile_photo" src="https://images.unsplash.com/photo-1564932436587-c6ea959a4053?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=860&q=80" alt="profile-photo"/>
 
                     <p>Today I am able to develop computer and mobile applications with languages like java and c++.</p>
                     <p>

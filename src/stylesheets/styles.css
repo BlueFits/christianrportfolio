@@ -234,6 +234,17 @@ nav {
 .menu_socials_text,
 .nav_personal_info > div > p {
     font-size: 21px;
+    margin-left: 30px;
+}
+
+.nav_personal_info > div:first-of-type {
+    margin-top: 0;
+}
+
+.nav_personal_info > div {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
 }
 
 .nav_inner > ul {
@@ -246,7 +257,25 @@ nav {
 }
 
 .nav_inner > ul > li {
-    margin: 15px 0;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.nav_menu_options {
+    transition: transform 0.7s ease-in-out, color 0.2s ease-in-out;
+    transform: translateY(0);
+    display: block;
+    text-decoration: none;
+    color: #000;
+    width: 200px;
+}
+
+.nav_menu_options:hover {
+    color: var(--secondary_color);
+}
+
+.hide_text {
+    transform: translateY(100px);
 }
 
 .nav_li_container {
@@ -326,6 +355,12 @@ header {
     flex-direction: column;
     align-items: center;
     color: #fff;
+    padding-bottom: 300px;
+}
+
+.profile_photo {
+    width: 100%;
+    margin-bottom: 35px;
 }
 
 .center_text {
@@ -334,7 +369,7 @@ header {
 
 .center_text > img,
 .center_text > p {
-    margin-bottom: 20px;
+    margin-bottom: 35px;
 }
 
 .next_tab {

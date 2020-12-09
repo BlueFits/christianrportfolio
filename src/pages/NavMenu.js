@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
+import { HiOutlineMail } from "react-icons/hi";
+import { GrLocation } from "react-icons/gr";
+import { MdPhoneAndroid } from "react-icons/md"; 
 
 import Colors from "../constants/Colors";
 
-const NavMenu = ({ onClick, navStatus }) => {
+const NavMenu = ({ onClick, navStatus, textStatus }) => {
     return (
         <div className={`nav_menu ${navStatus}`}>
             <div className="nav_illustration"></div>
@@ -13,15 +16,15 @@ const NavMenu = ({ onClick, navStatus }) => {
                     <div className="nav_info">
                         <div className="nav_personal_info">
                             <div>
-                                <img/> 
+                                <HiOutlineMail size={28} color={Colors.primary} /> 
                                 <p>hello@ui8.net</p>
                             </div>
                             <div>
-                                <img/> 
+                                <GrLocation size={28} color={Colors.primary}/>
                                 <p>9 Coronation Dr. ON M1E2H2</p>
                             </div>
                             <div>
-                                <img/> 
+                                <MdPhoneAndroid size={28} color={Colors.primary} />
                                 <p>+1 123 456 1234</p>
                             </div>
                         </div>
@@ -38,10 +41,10 @@ const NavMenu = ({ onClick, navStatus }) => {
                         </div>
                     </div>
                     <ul>
-                        <li><h1>About</h1></li>
-                        <li><h1>Work</h1></li>
-                        <li><h1>Services</h1></li>
-                        <li><h1>Contact</h1></li>
+                        <li><a className={`nav_menu_options ${textStatus[0]}`} href="#"><h1>About</h1></a></li>
+                        <li><a className={`nav_menu_options ${textStatus[1]}`} href="#"><h1>Work</h1></a></li>
+                        <li><a className={`nav_menu_options ${textStatus[1]}`} href="#"><h1 className={`nav_menu_options ${textStatus[2]}`}>Services</h1></a></li>
+                        <li><a className={`nav_menu_options ${textStatus[1]}`} href="#"><h1 className={`nav_menu_options ${textStatus[3]}`}>Contact</h1></a></li>
                     </ul>
                 </div>
             </div>
