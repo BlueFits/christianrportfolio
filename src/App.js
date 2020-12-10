@@ -118,7 +118,7 @@ const App = () => {
       <div style={{ zIndex: 2 }} className={`section_container ${transition[1]}`}>
         <Blogs />
         <NextTab 
-          text="Next: Blogs"
+          text="Next: Projects"
           color={Colors.lightgrey}
           textColor={Colors.darkgrey}
           onClick={pageHandler.bind(this, "next")}

@@ -24,6 +24,11 @@ p {
 
 .link_styles {
     text-decoration: none;
+    color: rgb(175, 175, 175);
+    transition: 0.2s ease-in-out;
+}
+
+.link_styles:hover {
     color: #fff;
 }
 
