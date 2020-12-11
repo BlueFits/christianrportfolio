@@ -35,8 +35,10 @@ const App = () => {
 
   const [navMenuStatus, setNavMenuStatus] = useState("nav_menu_hide");
 
+  const [blogState, setBlogState] = useState("from_bottom");
+
   //Handlers
-  const pageHandler = (motion) => {
+  const pageHandler = (motion, toPage) => {
     let arrClone = [...transition];
     const i = arrClone.indexOf("current_page");
     let temp = arrClone[i];
@@ -49,6 +51,14 @@ const App = () => {
       arrClone[i] = "next_page";
       setTransition(arrClone);
     }
+
+    //Blogs animation reveal
+    if (toPage === "blogs") {
+      setTimeout(() => {
+        setBlogState("");
+      }, 500);
+    }
+
   }
 
   const navHandler = () => {
@@ -112,11 +122,13 @@ const App = () => {
           text="Next: Blogs"
           color={Colors.secondary}
           textColor="#fff"
-          onClick={pageHandler.bind(this, "next")}
+          onClick={pageHandler.bind(this, "next", "blogs")}
         />
       </div>
       <div style={{ zIndex: 2 }} className={`section_container ${transition[1]}`}>
-        <Blogs />
+        <Blogs 
+          blogState={blogState}
+        />
         <NextTab 
           text="Next: Projects"
           color={Colors.lightgrey}

@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 
 //Blogs
-import SampleBlog from "../pages/blogs/Sample";
+import Card1 from "./blogs/Card1";
 
-const blogs = [
-    <SampleBlog />,
-];
+const Blogs = ({ blogState }) => {
 
-const Blogs = () => {
+    const blogs = [
+        <Card1 
+            blogState={blogState}
+        />,
+    ];
 
     const [blogIndex, setBlogIndex] = useState(0);
 
