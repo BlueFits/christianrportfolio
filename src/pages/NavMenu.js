@@ -6,7 +6,7 @@ import { MdPhoneAndroid } from "react-icons/md";
 
 import Colors from "../constants/Colors";
 
-const NavMenu = ({ onClick, navStatus, textStatus }) => {
+const NavMenu = ({ onClick, navStatus, textStatus, navClick }) => {
     return (
         <div className={`nav_menu ${navStatus}`}>
             <div className="nav_illustration"></div>
@@ -17,7 +17,7 @@ const NavMenu = ({ onClick, navStatus, textStatus }) => {
                         <div className="nav_personal_info">
                             <div>
                                 <HiOutlineMail size={28} color={Colors.primary} /> 
-                                <p>hello@ui8.net</p>
+                                <p>rojas.christian@outlook.com</p>
                             </div>
                             <div>
                                 <GrLocation size={28} color={Colors.primary}/>
@@ -25,26 +25,46 @@ const NavMenu = ({ onClick, navStatus, textStatus }) => {
                             </div>
                             <div>
                                 <MdPhoneAndroid size={28} color={Colors.primary} />
-                                <p>+1 123 456 1234</p>
+                                <p>+1 647 465 5315</p>
                             </div>
                         </div>
 
                         <div className="nav_menu_socials">
                             <div>
                                 <img/>
-                                <a href="#" className="menu_socials_text">Dribbble</a>
+                                <a href="https://www.facebook.com/profile.php?id=100047736457748" target="_blank" rel="noreferrer" className="menu_socials_text">Facebook</a>
                             </div>
                             <div>
                                 <img/>
-                                <a href="#" className="menu_socials_text">Instagram</a>
+                                <a href="https://www.linkedin.com/in/christian-rojas-16194a186" target="_blank" rel="noreferrer" className="menu_socials_text">LinkedIn</a>
                             </div>
                         </div>
                     </div>
                     <ul>
-                        <li><a className={`nav_menu_options ${textStatus[0]}`} href="#"><h1>About</h1></a></li>
-                        <li><a className={`nav_menu_options ${textStatus[1]}`} href="#"><h1>Work</h1></a></li>
-                        <li><a className={`nav_menu_options ${textStatus[1]}`} href="#"><h1 className={`nav_menu_options ${textStatus[2]}`}>Services</h1></a></li>
-                        <li><a className={`nav_menu_options ${textStatus[1]}`} href="#"><h1 className={`nav_menu_options ${textStatus[3]}`}>Contact</h1></a></li>
+                        <li 
+                            onClick={() => {
+                                navClick("home");
+                                onClick();
+                            }}
+                        ><span className={`nav_menu_options ${textStatus[0]}`}><h1>Home</h1></span></li>
+                        <li
+                            onClick={() => {
+                                navClick("blogs", "blogs");
+                                onClick();
+                            }}
+                        ><span className={`nav_menu_options ${textStatus[1]}`}><h1>Blogs</h1></span></li>
+                        <li
+                            onClick={() => {
+                                navClick("projects", "projects");
+                                onClick();
+                            }}
+                        ><span className={`nav_menu_options ${textStatus[2]}`}><h1>Work</h1></span></li>
+                        <li
+                            onClick={() => {
+                                navClick("contact");
+                                onClick();
+                            }}                        
+                        ><span className={`nav_menu_options ${textStatus[3]}`}><h1>Contact</h1></span></li>
                     </ul>
                 </div>
             </div>

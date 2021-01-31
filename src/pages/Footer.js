@@ -9,12 +9,12 @@ const Footer = () => {
                     <p><strong>Let's make it an amazing one.</strong></p>
                 </div>
                 <ul className="footer_nav">
-                    <li>About Me</li>
+                    <li>Home</li>
                     <li>Blogs</li>
-                    <li>Projects</li>
+                    <li>Work</li>
                     <li>Contact</li>
-                    <li>Instagram</li>
-                    <li>LinkedIn</li>
+                    <li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=100047736457748">Facebook</a></li>
+                    <li><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/christian-rojas-16194a186">LinkedIn</a></li>
                 </ul>
             </div>
             <div className="footer_disclaimer">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SmallHeader from "../components/SmallHeader";
 
 import Colors from "../constants/Colors";
@@ -6,6 +6,16 @@ import Colors from "../constants/Colors";
 import transitionImage from "../assets/images/blueTransitional.svg";
 
 const Contact = () => {
+
+    const [email, setEmail] = useState("");
+    const [subject, setSubject] = useState("");
+    const [message, setMessage] = useState("");
+
+    const submitHandler = (e) => {
+        e.preventDefault();
+        alert(`${email} ${subject} ${message}`);
+    }
+
     return (
         <section className="contact_section">
             <div className="contact_form_container soft_shadow">
@@ -27,30 +37,30 @@ const Contact = () => {
                     <div className="contact_info">
                         <div>
                             <img/>
-                            <p>hello@sample.com</p>
+                            <p>rojas.christian@outlook.com</p>
                         </div>
                         <div>
                             <img/>
-                            <p>9 Queen St. Toronto, Ontario.</p>
+                            <p>9 Coronation Dr, Toronto, ON, Canada</p>
                         </div>
                         <div>
                             <img/>
-                            <p>+1-647-345-7876</p>
+                            <p>+1-647-465-5315</p>
                         </div>
                     </div>
 
-                    <form className="contact_form" action="" method="get">
-                        <input placeholder="Email"/>
-                        <input placeholder="Subject"/>
-                        <textarea placeholder="Message"></textarea>
+                    <form className="contact_form" onSubmit={submitHandler}>
+                        <input placeholder="Email" value={email} onChange={e => setEmail(e.target.value)}/>
+                        <input placeholder="Subject" value={subject} onChange={e => setSubject(e.target.value)}/>
+                        <textarea placeholder="Message" value={message} onChange={e => setMessage(e.target.value)}></textarea>
                         <button className="contact_cta">Send</button>
                     </form>
                 </div>
 
                 <div className="contact_socials">
-                    <p>Instagram</p>
-                    <p>Instagram</p>
-                    <p>Instagram</p>
+                    {/* <p>Instagram</p> */}
+                    <a target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=100047736457748">Facebook</a>
+                    <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/christian-rojas-16194a186">LinkedIn</a>
                 </div>
             </div>
 

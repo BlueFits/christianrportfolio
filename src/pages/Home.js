@@ -18,8 +18,8 @@ const Home = ({ navHandler }) => {
             <nav>
                 <ul className="nav_li_container">
                     <li><AnchorLink className="anchorLink_style" herf="#">Christian Rojas</AnchorLink></li>
-                    <li><a className="link_styles" href="#">Instagram</a></li>
-                    <li><a className="link_styles" href="#">LinkedIn</a></li>
+                    <li><a className="link_styles" target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=100047736457748">Facebook</a></li>
+                    <li><a className="link_styles"  target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/christian-rojas-16194a186">LinkedIn</a></li>
                 </ul>
                 <div onClick={navHandler} unselectable="on">
                     <HiMenuAlt4 size={28} className="nav_button"/>
@@ -52,7 +52,7 @@ const Home = ({ navHandler }) => {
                         love for programming.
                     </p>
 
-                    <img className="profile_photo" src="https://images.unsplash.com/photo-1564932436587-c6ea959a4053?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=860&q=80" alt="profile-photo"/>
+                    <img className="profile_photo" src="https://i.imgur.com/I4dMFbH.jpg" alt="profile-photo"/>
 
                     <p>Today I am able to develop computer and mobile applications with languages like java and c++.</p>
                     <p>
