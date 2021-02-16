@@ -11,7 +11,55 @@ import CompSci from "../assets/images/CompSci.svg";
 
 const Home = ({ navHandler }) => {
 
-    useEffect(() => ParallaxEffect("home", "home_parallax", 0.20), [ParallaxEffect]);
+    useEffect(() => ParallaxEffect("home", "home_parallax", 0.35), [ParallaxEffect]);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = document.getElementById("home").scrollTop;
+            const centerTop = document.getElementById("center_text_top_id");
+            const centerBody1 = document.getElementById("center_text_body1_id");
+            const centerBody2 = document.getElementById("center_text_body2_id");
+            const centerConclusion = document.getElementById("center_text_conclusion_id");
+
+            console.log(offset);
+
+            if (offset >= 420) {
+                centerTop.style.opacity = "1";
+                centerTop.style.transform = "translateY(0)";
+            } else {
+                centerTop.style.opacity = "0";
+                centerTop.style.transform = "translateX(-10px)";
+            }
+            
+            if (offset >= 1450) {
+                centerBody1.style.opacity = "1";
+                centerBody1.style.transform = "translateY(0)";
+            } else {
+                centerBody1.style.opacity = "0";
+                centerBody1.style.transform = "translateX(10px)";
+            }
+
+            if (offset >= 1500) {
+                centerBody2.style.opacity = "1";
+                centerBody2.style.transform = "translateY(0)";
+            } else {
+                centerBody2.style.opacity = "0";
+                centerBody2.style.transform = "translateX(-10px)";
+            }
+
+            if (offset >= 1550) {
+                centerConclusion.style.opacity = "1";
+                centerConclusion.style.transform = "translateY(0)";
+            } else {
+                centerConclusion.style.opacity = "0";
+                centerConclusion.style.transform = "translateX(10px)";
+            }
+        };
+        
+        document.getElementById("home").addEventListener("scroll", handleScroll);
+
+        return () => document.getElementById("home").removeEventListener("scroll", handleScroll);
+    });
 
     return (
         <section id="home_parallax" className="home_section">
@@ -46,7 +94,7 @@ const Home = ({ navHandler }) => {
             <div className="home_about">
                 <SmallHeader text="What I Do"/>
                 <div className="center_text">
-                    <p>
+                    <p id="center_text_top_id" style={{ ...styles.transitionStyle, opacity: 0 }}>
                         Hi there! I'm Christian, a 21 year old from Toronto, Canada. Coding has been a hobby of mine ever since 
                         I was a kid. What started from playing around with java, doing simple applications, developed in to a 
                         love for programming.
@@ -54,16 +102,22 @@ const Home = ({ navHandler }) => {
 
                     <img className="profile_photo" src="https://i.imgur.com/I4dMFbH.jpg" alt="profile-photo"/>
 
-                    <p>Today I am able to develop computer and mobile applications with languages like java and c++.</p>
-                    <p>
+                    <p id="center_text_body1_id" style={{ ...styles.transitionStyle }}>Today I am able to develop computer and mobile applications with languages like java and c++.</p>
+                    <p id="center_text_body2_id" style={styles.transitionStyle}>
                         Web development is also one of my passions. I love the whole process, from designing, 
                         all the way to development. Creating unique and pleasant website experiences is what I'm all about.
                     </p>
-                    <p>For a complete summary of all my skills refer to my portfolio.</p>
+                    <p id="center_text_conclusion_id" style={styles.transitionStyle}>For a complete summary of all my skills refer to my portfolio.</p>
                 </div>
             </div>
         </section>
     );
+};
+
+const styles = {
+    transitionStyle: {
+        transition: "0.3s ease-in-out"
+    }
 };
 
 export default Home;

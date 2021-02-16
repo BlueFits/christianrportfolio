@@ -59,13 +59,14 @@ const App = () => {
     "hide_text"
   ]);
 
+  //Hover Nav
+
   const [hoverNav, setHoverNav] = useState([
     "circle-filled",
     "",
     "",
     "",
   ]);
-
 
   //Nav Menu
   const [navMenuStatus, setNavMenuStatus] = useState("nav_menu_hide");
