@@ -17,7 +17,6 @@ import NextTab from "./components/NextTab";
 import Colors from './constants/Colors';
 
 //Projects Page Dependencies
-
 const none = [
   "",
   "",
@@ -71,6 +70,7 @@ const App = () => {
 
   //Blogs
   const [blogState, setBlogState] = useState("from_bottom");
+  const [blogNextHidden, setBlogNextHidden] = useState("blog_next_container_hidden");
 
   //Projects Page
   const [projectShowClass, setProjectShowClass] = useState(none);
@@ -218,6 +218,10 @@ const App = () => {
       setTimeout(() => {
         setBlogState("");
       }, 500);
+
+      setTimeout(() => {
+        setBlogNextHidden("");
+      }, 1500);
     }
 
     if (toPage === "projects") {
@@ -302,28 +306,25 @@ const App = () => {
 
       <div style={{ zIndex: 2 }} className={`section_container ${transition[1]}`}>
         <Blogs 
-          blogState={blogState}
-        />
-        <NextTab 
-          text="Next: Projects"
-          color={Colors.lightgrey}
-          textColor={Colors.darkgrey}
-          onClick={pageHandler.bind(this, "next", "projects")}
+          blogState={ blogState }
+          nextOnClick={pageHandler.bind(this, "next", "projects")}
+          blogNextHidden={blogNextHidden}
         />
       </div>
       
-      <div style={{ zIndex: 1 }} className={`section_container ${transition[2]}`}>
+      <div style={{ zIndex: 1 }} className={`section_container ${transition[2]}`} id="project">
         <Project 
           projectShowClass={projectShowClass}
           selected={selectedProject}
           projectCategoryClickHandler={projectCategoryClickHandler}
+          nextOnClick={pageHandler.bind(this, "next")}
         />
-        <NextTab 
+        {/* <NextTab 
           text="Next: Contact"
           color={Colors.lightblue}
           textColor="#fff"
           onClick={pageHandler.bind(this, "next")}
-        />
+        /> */}
       </div>
       
       <div style={{ zIndex: 0 }} className={`section_container ${transition[3]}`}>

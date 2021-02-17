@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
+import NextTab from "../components/NextTab";
+
+import Colors from "../constants/Colors";
 
 //Blogs
 import Card1 from "./blogs/Card1";
 
-const Blogs = ({ blogState }) => {
+const Blogs = ({ blogState, nextOnClick, blogNextHidden }) => {
 
     const blogs = [
         <Card1 
@@ -16,6 +20,15 @@ const Blogs = ({ blogState }) => {
     return (
         <section className="blog_section">
             {blogs[blogIndex]}
+
+            <div className={`blog_next_container ${blogNextHidden}`}>
+                <NextTab 
+                    text="Next: Projects"
+                    color={Colors.lightgrey}
+                    textColor={Colors.darkgrey}
+                    onClick={ nextOnClick }
+                />
+            </div>
         </section>
     );
 };

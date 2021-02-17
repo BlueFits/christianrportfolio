@@ -29,7 +29,6 @@ const Home = ({ navHandler, nextOnClick }) => {
             const maxPageHeight = (homeElement.scrollHeight - homeElement.clientHeight) - 1;
 
             if (offset >= maxPageHeight) {
-                console.log("You have reached the end of the page");
                 document.getElementById("home_nextTab_Id").style.transform = "translateY(0)";
             } else {
                 document.getElementById("home_nextTab_Id").style.transform = "translateY(100px)";

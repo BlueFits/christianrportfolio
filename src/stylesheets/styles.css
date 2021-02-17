@@ -426,6 +426,16 @@ header {
 
 .blog_section {
     height: 100%;
+    overflow: hidden;
+}
+
+.blog_next_container {
+    transform: translateY(-50px);
+    transition: 0.3s ease-in-out;
+}
+
+.blog_next_container_hidden {
+    transform: translateY(0px);
 }
 
 .blog_header {
@@ -497,7 +507,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 40px;
+    overflow: hidden;
 }
 
 .project_header {
@@ -562,6 +572,12 @@ header {
     position: absolute;
     z-index: 0;
     opacity: 0;
+}
+
+.project_nextTab_container {
+    transition: 0.3s ease-in-out;
+    width: 100%;
+    transform: translateY(50px);
 }
 
 .show_tab {
