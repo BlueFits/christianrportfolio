@@ -59,8 +59,6 @@ const App = () => {
     "hide_text"
   ]);
 
-  //Hover Nav
-
   const [hoverNav, setHoverNav] = useState([
     "circle-filled",
     "",
@@ -82,7 +80,7 @@ const App = () => {
     "",
     "",
     "",
-]);
+  ]);
 
   //Projects Handlers
   const projectCategoryClickHandler = (category) => {
@@ -283,6 +281,7 @@ const App = () => {
 
   return (
     <div>
+      {/* <Splash /> */}
       <div className="hover_nav_container">
         <div onClick={pageHandler.bind(this, "home")} className={`circle-icon ${hoverNav[0]}`}></div>
         <div onClick={pageHandler.bind(this, "blogs", "blogs")} className={`circle-icon ${hoverNav[1]}`}></div>
@@ -296,15 +295,11 @@ const App = () => {
         navStatus={navMenuStatus} 
         textStatus={textStatus}
       />
+
       <div style={{ zIndex: 3 }} className={`section_container ${transition[0]}`} id="home">
-        <Home navHandler={navHandler} />
-        <NextTab 
-          text="Next: Blogs"
-          color={Colors.secondary}
-          textColor="#fff"
-          onClick={pageHandler.bind(this, "next", "blogs")}
-        />
+        <Home navHandler={navHandler} nextOnClick={pageHandler.bind(this, "next", "blogs")}/>
       </div>
+
       <div style={{ zIndex: 2 }} className={`section_container ${transition[1]}`}>
         <Blogs 
           blogState={blogState}
@@ -316,6 +311,7 @@ const App = () => {
           onClick={pageHandler.bind(this, "next", "projects")}
         />
       </div>
+      
       <div style={{ zIndex: 1 }} className={`section_container ${transition[2]}`}>
         <Project 
           projectShowClass={projectShowClass}
@@ -329,6 +325,7 @@ const App = () => {
           onClick={pageHandler.bind(this, "next")}
         />
       </div>
+      
       <div style={{ zIndex: 0 }} className={`section_container ${transition[3]}`}>
         <Contact />
         <Footer />

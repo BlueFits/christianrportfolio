@@ -56,7 +56,7 @@ p {
     align-items: center;
     background-color: var(--secondary_color);
     position: fixed;
-    z-index: 5;
+    z-index: 6;
 }
 
 .section_container {
@@ -334,6 +334,13 @@ nav {
     background-image: url(../assets/images/bg.svg);
     background-size: cover;
     background-repeat: no-repeat;
+    /* Fixes next tab animation */
+    overflow: hidden;
+}
+
+.home_nextTab_container {
+    transition: 0.4s ease-in-out;
+    transform: translateY(100px);
 }
 
 header {

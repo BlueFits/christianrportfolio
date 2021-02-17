@@ -3,25 +3,37 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 import { HiMenuAlt4 } from "react-icons/hi";
 import TextLoop from "react-text-loop";
 
+import NextTab from "../components/NextTab";
+
+import Colors from "../constants/Colors";
+
 import ParallaxEffect from "../effects/ParallaxEvent";
 
 import SmallHeader from "../components/SmallHeader";
 
 import CompSci from "../assets/images/CompSci.svg";
 
-const Home = ({ navHandler }) => {
+const Home = ({ navHandler, nextOnClick }) => {
 
     useEffect(() => ParallaxEffect("home", "home_parallax", 0.35), [ParallaxEffect]);
 
     useEffect(() => {
         const handleScroll = () => {
-            const offset = document.getElementById("home").scrollTop;
+            const homeElement = document.getElementById("home");
+            const offset = homeElement.scrollTop;
             const centerTop = document.getElementById("center_text_top_id");
             const centerBody1 = document.getElementById("center_text_body1_id");
             const centerBody2 = document.getElementById("center_text_body2_id");
             const centerConclusion = document.getElementById("center_text_conclusion_id");
 
-            console.log(offset);
+            const maxPageHeight = (homeElement.scrollHeight - homeElement.clientHeight) - 1;
+
+            if (offset >= maxPageHeight) {
+                console.log("You have reached the end of the page");
+                document.getElementById("home_nextTab_Id").style.transform = "translateY(0)";
+            } else {
+                document.getElementById("home_nextTab_Id").style.transform = "translateY(100px)";
+            }
 
             if (offset >= 420) {
                 centerTop.style.opacity = "1";
@@ -109,6 +121,15 @@ const Home = ({ navHandler }) => {
                     </p>
                     <p id="center_text_conclusion_id" style={styles.transitionStyle}>For a complete summary of all my skills refer to my portfolio.</p>
                 </div>
+            </div>
+
+            <div id="home_nextTab_Id" className="home_nextTab_container">
+                <NextTab 
+                    text="Next: Blogs"
+                    color={Colors.secondary}
+                    textColor="#fff"
+                    onClick={nextOnClick}
+                />
             </div>
         </section>
     );
