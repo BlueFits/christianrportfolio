@@ -766,6 +766,18 @@ footer {
     font-size: 28px;
 }
 
+#footer_header_text1 {
+    transition: 0.3s ease-in-out;
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
+#footer_header_text2 {
+    transition: 0.3s ease-in-out;
+    transform: translateX(-100px);
+    opacity: 0;
+}
+
 .footer_nav {
     list-style: none;
     display: flex;

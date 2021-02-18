@@ -14,33 +14,9 @@ import Construction from "./pages/Construction";
 import Splash from "./components/Splash";
 import NextTab from "./components/NextTab";
 
+//Constants
 import Colors from './constants/Colors';
-
-//Projects Page Dependencies
-const none = [
-  "",
-  "",
-];
-
-const all = [
-  "show_tab", //BetterThanYesterday
-  "show_tab", //JustReturn
-];
-
-const website = [
-  "",
-  "show_tab",
-];
-
-const illustration = [
-  "",
-  "",
-];
-
-const mobile = [
-  "",
-  "",
-];
+import { none, all, website, illustration, mobile } from "./constants/ProjectStates";
 
 const App = () => {
 
@@ -134,6 +110,25 @@ const App = () => {
     const j = navClone.indexOf("circle-filled");
     let temp = arrClone[i];
     let tempJ = navClone[j];
+
+    //Reset Blog Animations
+    setBlogNextHidden("blog_next_container_hidden");
+    setBlogState("from_bottom");
+
+    //Handle page reset here side note: contact has a naming error footer.
+    let pageReset = {
+      home: document.getElementById("home"),
+      projects: document.getElementById("project"),
+      contact: document.getElementById("footer"),
+    };
+    
+    for (const prop in pageReset) {
+      if (prop !== motion) {
+        setTimeout(() => {
+          pageReset[prop].scrollTop = 0;
+        }, 600);
+      }
+    }
 
     if (motion === "next" && arrClone[i + 1]) {
 
@@ -319,15 +314,9 @@ const App = () => {
           projectCategoryClickHandler={projectCategoryClickHandler}
           nextOnClick={pageHandler.bind(this, "next")}
         />
-        {/* <NextTab 
-          text="Next: Contact"
-          color={Colors.lightblue}
-          textColor="#fff"
-          onClick={pageHandler.bind(this, "next")}
-        /> */}
       </div>
       
-      <div style={{ zIndex: 0 }} className={`section_container ${transition[3]}`}>
+      <div style={{ zIndex: 0 }} className={`section_container ${transition[3]}`} id="footer">
         <Contact />
         <Footer />
       </div>
