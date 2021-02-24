@@ -296,13 +296,14 @@ const App = () => {
       />
 
       <div style={{ zIndex: 3 }} className={`section_container ${transition[0]}`} id="home">
-        <Home navHandler={navHandler} nextOnClick={pageHandler.bind(this, "next", "blogs")}/>
+        <Home navHandler={navHandler} nextOnClick={pageHandler.bind(this, "blogs", "blogs")}/>
       </div>
 
-      <div style={{ zIndex: 2 }} className={`section_container ${transition[1]}`}>
+      <div style={{ zIndex: 2 }} className={`section_container ${transition[1]}`} id="blogs">
         <Blogs 
           blogState={ blogState }
-          nextOnClick={pageHandler.bind(this, "next", "projects")}
+          nextOnClick={pageHandler.bind(this, "projects", "projects")}
+          prev={pageHandler.bind(this, "home")}
           blogNextHidden={blogNextHidden}
         />
       </div>
@@ -312,12 +313,13 @@ const App = () => {
           projectShowClass={projectShowClass}
           selected={selectedProject}
           projectCategoryClickHandler={projectCategoryClickHandler}
-          nextOnClick={pageHandler.bind(this, "next")}
+          nextOnClick={pageHandler.bind(this, "contact")}
+          prev={pageHandler.bind(this, "blogs", "blogs")}
         />
       </div>
       
       <div style={{ zIndex: 0 }} className={`section_container ${transition[3]}`} id="footer">
-        <Contact />
+        <Contact prev={pageHandler.bind(this, "projects", "projects")}/>
         <Footer />
       </div>
     </div>

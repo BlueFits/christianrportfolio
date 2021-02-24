@@ -8,6 +8,7 @@ import NextTab from "../components/NextTab";
 import Colors from "../constants/Colors";
 
 import ParallaxEffect from "../effects/ParallaxEvent";
+import ScrollPageEvent from "../effects/ScrollPageEvent";
 
 import SmallHeader from "../components/SmallHeader";
 
@@ -16,17 +17,20 @@ import CompSci from "../assets/images/CompSci.svg";
 const Home = ({ navHandler, nextOnClick }) => {
 
     useEffect(() => ParallaxEffect("home", "home_parallax", 0.35), [ParallaxEffect]);
+    useEffect(() => ScrollPageEvent("home", nextOnClick), [ScrollPageEvent]);
 
     useEffect(() => {
-        const handleScroll = () => {
-            const homeElement = document.getElementById("home");
-            const offset = homeElement.scrollTop;
-            const centerTop = document.getElementById("center_text_top_id");
-            const centerBody1 = document.getElementById("center_text_body1_id");
-            const centerBody2 = document.getElementById("center_text_body2_id");
-            const centerConclusion = document.getElementById("center_text_conclusion_id");
 
-            const maxPageHeight = (homeElement.scrollHeight - homeElement.clientHeight) - 1;
+        const homeElement = document.getElementById("home");
+        const centerTop = document.getElementById("center_text_top_id");
+        const centerBody1 = document.getElementById("center_text_body1_id");
+        const centerBody2 = document.getElementById("center_text_body2_id");
+        const centerConclusion = document.getElementById("center_text_conclusion_id");
+
+        const maxPageHeight = (homeElement.scrollHeight - homeElement.clientHeight) - 1;
+
+        const handleScroll = () => {
+            const offset = homeElement.scrollTop;
 
             if (offset >= maxPageHeight) {
                 document.getElementById("home_nextTab_Id").style.transform = "translateY(0)";
@@ -42,7 +46,7 @@ const Home = ({ navHandler, nextOnClick }) => {
                 centerTop.style.transform = "translateX(-10px)";
             }
             
-            if (offset >= 1450) {
+            if (offset >= 1400) {
                 centerBody1.style.opacity = "1";
                 centerBody1.style.transform = "translateY(0)";
             } else {
@@ -50,7 +54,7 @@ const Home = ({ navHandler, nextOnClick }) => {
                 centerBody1.style.transform = "translateX(10px)";
             }
 
-            if (offset >= 1500) {
+            if (offset >= 1450) {
                 centerBody2.style.opacity = "1";
                 centerBody2.style.transform = "translateY(0)";
             } else {
@@ -58,7 +62,7 @@ const Home = ({ navHandler, nextOnClick }) => {
                 centerBody2.style.transform = "translateX(-10px)";
             }
 
-            if (offset >= 1550) {
+            if (offset >= 1500) {
                 centerConclusion.style.opacity = "1";
                 centerConclusion.style.transform = "translateY(0)";
             } else {
@@ -67,9 +71,11 @@ const Home = ({ navHandler, nextOnClick }) => {
             }
         };
         
-        document.getElementById("home").addEventListener("scroll", handleScroll);
+        homeElement.addEventListener("scroll", handleScroll);
 
-        return () => document.getElementById("home").removeEventListener("scroll", handleScroll);
+        return () => {
+            homeElement.removeEventListener("scroll", handleScroll);
+        }
     });
 
     return (

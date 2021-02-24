@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SmallHeader from "../components/SmallHeader";
 
 import Colors from "../constants/Colors";
 
 import transitionImage from "../assets/images/blueTransitional.svg";
 
-const Contact = () => {
+import ScrollPageEvent from "../effects/ScrollPageEvent";
+
+const Contact = ({ prev }) => {
+
+    useEffect(ScrollPageEvent.bind(this, "footer", false, prev), [ScrollPageEvent]);
 
     const [email, setEmail] = useState("");
     const [subject, setSubject] = useState("");

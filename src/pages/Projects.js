@@ -6,9 +6,11 @@ import NextTab from "../components/NextTab";
 
 import Colors from "../constants/Colors";
 
-// Figure out a way to animate on click of the next tab
+import ScrollPageEvent from "../effects/ScrollPageEvent";
 
-const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nextOnClick }) => {
+const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nextOnClick, prev }) => {
+
+    useEffect(() => ScrollPageEvent("project", nextOnClick, prev), [ScrollPageEvent]);
 
     useEffect(() => {
         const projectElement = document.getElementById("project");

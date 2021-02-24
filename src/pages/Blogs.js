@@ -4,10 +4,14 @@ import NextTab from "../components/NextTab";
 
 import Colors from "../constants/Colors";
 
+import ScrollPageEvent from "../effects/ScrollPageEvent";
+
 //Blogs
 import Card1 from "./blogs/Card1";
 
-const Blogs = ({ blogState, nextOnClick, blogNextHidden }) => {
+const Blogs = ({ blogState, nextOnClick, blogNextHidden, prev }) => {
+
+    useEffect(ScrollPageEvent.bind(this, "blogs", nextOnClick, prev), [ScrollPageEvent]);
 
     const blogs = [
         <Card1 
