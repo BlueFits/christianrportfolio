@@ -9,6 +9,7 @@ import Colors from "../constants/Colors";
 
 import ParallaxEffect from "../effects/ParallaxEvent";
 import ScrollPageEvent from "../effects/ScrollPageEvent";
+import Animations from "../effects/Animations";
 
 import SmallHeader from "../components/SmallHeader";
 
@@ -32,42 +33,37 @@ const Home = ({ navHandler, nextOnClick }) => {
         const handleScroll = () => {
             const offset = homeElement.scrollTop;
 
+            console.log(offset);
+
             if (offset >= maxPageHeight) {
                 document.getElementById("home_nextTab_Id").style.transform = "translateY(0)";
             } else {
                 document.getElementById("home_nextTab_Id").style.transform = "translateY(100px)";
             }
 
-            if (offset >= 420) {
-                centerTop.style.opacity = "1";
-                centerTop.style.transform = "translateY(0)";
+            if (offset >= 250) {
+                Animations.fadeAndScale.init(centerTop)
             } else {
-                centerTop.style.opacity = "0";
-                centerTop.style.transform = "translateX(-10px)";
+                Animations.fadeAndScale.onAnim(centerTop);
             }
             
-            if (offset >= 1400) {
-                centerBody1.style.opacity = "1";
-                centerBody1.style.transform = "translateY(0)";
+            if (offset >= 1350) {
+                Animations.fadeAndScale.init(centerBody1);
             } else {
-                centerBody1.style.opacity = "0";
-                centerBody1.style.transform = "translateX(10px)";
+                Animations.fadeAndScale.onAnim(centerBody1);
+            }
+
+            if (offset >= 1400) {
+                Animations.fadeAndScale.init(centerBody2);
+
+            } else {
+                Animations.fadeAndScale.onAnim(centerBody2);
             }
 
             if (offset >= 1450) {
-                centerBody2.style.opacity = "1";
-                centerBody2.style.transform = "translateY(0)";
+                Animations.fadeAndScale.init(centerConclusion);
             } else {
-                centerBody2.style.opacity = "0";
-                centerBody2.style.transform = "translateX(-10px)";
-            }
-
-            if (offset >= 1500) {
-                centerConclusion.style.opacity = "1";
-                centerConclusion.style.transform = "translateY(0)";
-            } else {
-                centerConclusion.style.opacity = "0";
-                centerConclusion.style.transform = "translateX(10px)";
+                Animations.fadeAndScale.onAnim(centerConclusion);
             }
         };
         
@@ -142,7 +138,7 @@ const Home = ({ navHandler, nextOnClick }) => {
 
 const styles = {
     transitionStyle: {
-        transition: "0.3s ease-in-out"
+        transition: "0.25s ease-in-out"
     }
 };
 
