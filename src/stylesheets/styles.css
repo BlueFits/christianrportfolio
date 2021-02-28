@@ -560,6 +560,7 @@ header {
 }
 
 .project_container {
+    cursor: pointer;
     height: 580px;
     width: 530px;
     border-radius: 30px;
@@ -572,6 +573,10 @@ header {
     position: absolute;
     z-index: 0;
     opacity: 0;
+}
+
+.project_container:hover {
+    box-shadow: 0px 10px 35px 16px #8F8F8F;
 }
 
 .project_nextTab_container {
@@ -589,11 +594,18 @@ header {
 }
 
 .project_image_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 80%;
     width: 100%;
-    background-position: center;
+    background-position: top;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
+}
+
+.project_logo_container {
+    width: 100%;
 }
 
 .img_inherit {

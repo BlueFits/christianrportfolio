@@ -17,8 +17,6 @@ const ScrollPageEvent  = (elementId, callBack, prev) => {
         } 
 
         if (offset === 0) {
-            console.log(e.deltaY);
-
             if (e.deltaY <= -100) {
                 if (prev) prev(); 
             }

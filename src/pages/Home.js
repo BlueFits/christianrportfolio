@@ -33,8 +33,6 @@ const Home = ({ navHandler, nextOnClick }) => {
         const handleScroll = () => {
             const offset = homeElement.scrollTop;
 
-            console.log(offset);
-
             if (offset >= maxPageHeight) {
                 document.getElementById("home_nextTab_Id").style.transform = "translateY(0)";
             } else {

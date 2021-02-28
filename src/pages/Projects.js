@@ -20,6 +20,11 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
         const handleScroll = () => {
             const offset = projectElement.scrollTop;
 
+            const projectElements = document.getElementsByClassName('project_image_container');  
+            for (const project of projectElements) {
+                project.style.backgroundPositionY = (offset * 0.2) + "px";
+            }
+
             if (offset >= maxPageHeight) {
                 projectNextTab.style.transform = "translateY(0)";
             } else {
@@ -48,17 +53,22 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
                 
                 <div className="projects_showcase">
                     <ProjectTab
-                        imageUrl="https://images.unsplash.com/photo-1606654951863-70346cd12201?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80"
+                        imageUrl="https://raw.githubusercontent.com/BlueFits/personalWeb/master/src/assets/images/BetterThanYesterday/backdrop.png"
                         title="BetterThanYesterday"
                         description="Mobile App, Landing Page" 
                         showClass={projectShowClass[0]}
+                        logoImg={"https://raw.githubusercontent.com/BlueFits/personalWeb/master/src/assets/images/BetterThanYesterday/logo.png"}
+                        projectUrl={"https://betterthanyesterdayapp.herokuapp.com/"}
                     />
 
                     <ProjectTab
-                        imageUrl="https://images.unsplash.com/photo-1606654951863-70346cd12201?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80"
-                        title="BetterThanYesterday"
-                        description="Mobile App, Landing Page" 
+                        title="Just Return"
+                        description="Landing Page" 
                         showClass={projectShowClass[1]}
+                        logoImg={"https://justreturn.herokuapp.com/static/media/LogoOnDark.9edde41e.svg"}
+                        projectUrl={"https://justreturn.herokuapp.com/"}
+                        logoWidth={"70%"}
+                        bgColor={"#00887A"}
                     />
                 </div>
 

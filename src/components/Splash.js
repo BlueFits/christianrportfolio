@@ -64,7 +64,7 @@ const Splash = () => {
                 <div className="splash_texts_container">
                     <div className="splash_header">
                         <h1 style={{ color: "#fff" }}>Welcome</h1>
-                        <h1>to my website.</h1>
+                        <h1>to my website. Not mobile friendly yet :( </h1>
                     </div>
                     <p>Thanks for dropping by, in here is where my imagination manifests. I hope you enjoy your stay.</p>
                 </div>
