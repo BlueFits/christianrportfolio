@@ -16,7 +16,6 @@ import NextTab from "./components/NextTab";
 
 //Constants
 import Colors from './constants/Colors';
-import { none, all, website, illustration, mobile } from "./constants/ProjectStates";
 
 const App = () => {
 
@@ -48,8 +47,6 @@ const App = () => {
   const [blogState, setBlogState] = useState("from_bottom");
   const [blogNextHidden, setBlogNextHidden] = useState("blog_next_container_hidden");
 
-  //Projects Page
-  const [projectShowClass, setProjectShowClass] = useState(none);
 
   const [selectedProject, setSelectedProject] = useState([
     "projects_selected",
@@ -60,9 +57,50 @@ const App = () => {
 
   //Projects Handlers
   const projectCategoryClickHandler = (category) => {
+    const btyElem = document.getElementById("bty_project_id");
+    const justReturnElem = document.getElementById("just_return_id");
+
+    //Anim Functions
+    const showAnim = (elem) => {
+      elem.style.transform = "translateY(0px)";
+      elem.style.opacity = "1";
+      elem.style.display = "block"; 
+    };
+
+    const hideAnim = (elem) => {
+      elem.style.opacity = "0";
+      elem.style.transform = "translateY(60px)";
+
+      setTimeout(() => {
+        elem.style.display = "none"; 
+      }, 500);
+    };
+
+    //State Object
+    const showStates = {
+      all: () => {
+        showAnim(btyElem);
+        showAnim(justReturnElem);
+      },
+      website: () => {
+        showAnim(btyElem);
+        showAnim(justReturnElem);
+      },
+      illustration: () => {
+        showAnim(justReturnElem);
+        hideAnim(btyElem);
+      },
+      mobile: () => {
+        showAnim(btyElem);
+        hideAnim(justReturnElem);
+      },
+    };
+
+
       switch (category) {
           case "all":
-            setProjectShowClass(all);
+            showStates.all();
+
             setSelectedProject([
               "projects_selected",
               "",
@@ -71,7 +109,9 @@ const App = () => {
             ]);
             break;
           case "website":
-            setProjectShowClass(website);
+            showStates.website();
+
+
             setSelectedProject([
               "",
               "projects_selected",
@@ -80,7 +120,8 @@ const App = () => {
             ]);
             break;
           case "illustration":
-            setProjectShowClass(illustration);
+            showStates.illustration();
+
             setSelectedProject([
               "",
               "",
@@ -89,7 +130,8 @@ const App = () => {
             ]);
             break;
           case "mobile":
-            setProjectShowClass(mobile);
+            showStates.mobile();
+
             setSelectedProject([
               "",
               "",
@@ -98,7 +140,7 @@ const App = () => {
             ]);
             break;
           default:
-            setProjectShowClass(all);
+            showStates.all();
       }
   };
 
@@ -116,6 +158,7 @@ const App = () => {
     setBlogState("from_bottom");
 
     //Handle page reset here side note: contact has a naming error footer.
+
     let pageReset = {
       home: document.getElementById("home"),
       projects: document.getElementById("project"),
@@ -220,9 +263,23 @@ const App = () => {
     }
 
     if (toPage === "projects") {
-      setTimeout(() => {
-        setProjectShowClass(all);
-      }, 500);
+        const btyElem = document.getElementById("bty_project_id");
+        const justReturnElem = document.getElementById("just_return_id");
+
+        const showAnim = (elem) => {
+          elem.style.display = "block"; 
+          elem.style.transform = "translateY(0px)";
+          elem.style.opacity = "1";
+        };
+
+        setSelectedProject([
+          "projects_selected",
+          "",
+          "",
+          "",
+        ]);
+        showAnim(btyElem);
+        showAnim(justReturnElem);
     }
   }
 
@@ -310,7 +367,6 @@ const App = () => {
       
       <div style={{ zIndex: 1 }} className={`section_container ${transition[2]}`} id="project">
         <Project 
-          projectShowClass={projectShowClass}
           selected={selectedProject}
           projectCategoryClickHandler={projectCategoryClickHandler}
           nextOnClick={pageHandler.bind(this, "contact")}

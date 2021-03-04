@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 
-const ProjectTab = ({ imageUrl, title, description, showClass, logoImg, projectUrl, logoWidth, bgColor }) => {
+const ProjectTab = ({ projectId, imageUrl, title, description, showClass, logoImg, projectUrl, logoWidth, bgColor }) => {
 
     const onClickHandler = () => {
         window.open(projectUrl, '_blank').focus();
     };
 
     return (
-        <div onClick={onClickHandler} className={`project_container soft_shadow ${showClass}`}>
+        <div id={projectId} onClick={onClickHandler} className={`project_container soft_shadow`}>
             <div style={{ backgroundImage: `url(${imageUrl})`, backgroundColor: bgColor }} className="project_image_container">
                 <div className="project_logo_container" style={{ width: logoWidth }}>
                     <img 

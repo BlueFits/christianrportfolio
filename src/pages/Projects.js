@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 import SmallHeader from "../components/SmallHeader";
 import ProjectTab from "../components/ProjectTab";
@@ -53,18 +53,18 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
                 
                 <div className="projects_showcase">
                     <ProjectTab
+                        projectId={"bty_project_id"}
                         imageUrl="https://raw.githubusercontent.com/BlueFits/personalWeb/master/src/assets/images/BetterThanYesterday/backdrop.png"
                         title="BetterThanYesterday"
                         description="Mobile App, Landing Page" 
-                        showClass={projectShowClass[0]}
                         logoImg={"https://raw.githubusercontent.com/BlueFits/personalWeb/master/src/assets/images/BetterThanYesterday/logo.png"}
                         projectUrl={"https://betterthanyesterdayapp.herokuapp.com/"}
                     />
 
                     <ProjectTab
+                        projectId={"just_return_id"}
                         title="Just Return"
                         description="Landing Page" 
-                        showClass={projectShowClass[1]}
                         logoImg={"https://justreturn.herokuapp.com/static/media/LogoOnDark.9edde41e.svg"}
                         projectUrl={"https://justreturn.herokuapp.com/"}
                         logoWidth={"70%"}

@@ -573,6 +573,7 @@ header {
     position: absolute;
     z-index: 0;
     opacity: 0;
+    position: relative;
 }
 
 .project_container:hover {
@@ -583,14 +584,6 @@ header {
     transition: 0.3s ease-in-out;
     width: 100%;
     transform: translateY(50px);
-}
-
-.show_tab {
-    /* transform: scale(1); */
-    transform: translateY(0);
-    position: relative;
-    z-index: 1;
-    opacity: 1;
 }
 
 .project_image_container {
