@@ -74,14 +74,14 @@ const Home = ({ navHandler, nextOnClick }) => {
 
     return (
         <section id="home_parallax" className="home_section">
-            <nav>
+            <nav className="nav_home_container">
                 <ul className="nav_li_container">
                     <li><AnchorLink className="anchorLink_style" herf="#">Christian Rojas</AnchorLink></li>
                     <li><a className="link_styles" target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=100047736457748">Facebook</a></li>
                     <li><a className="link_styles"  target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/christian-rojas-16194a186">LinkedIn</a></li>
                 </ul>
-                <div onClick={navHandler} unselectable="on">
-                    <HiMenuAlt4 size={28} className="nav_button"/>
+                <div onClick={navHandler} unselectable="on" className="nav_button_container">
+                    <HiMenuAlt4 size={28} size={35} className="nav_button"/>
                 </div>
             </nav>
             <header>

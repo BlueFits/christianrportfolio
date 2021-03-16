@@ -11,13 +11,13 @@ const ScrollPageEvent  = (elementId, callBack, prev) => {
         const maxPageHeight = (elem.scrollHeight - elem.clientHeight) - 1;
 
         if (offset >= maxPageHeight) {
-            if (e.deltaY >= 100) {
+            if (e.deltaY >= 90) {
                 if (callBack) callBack();
             } 
         } 
 
         if (offset === 0) {
-            if (e.deltaY <= -100) {
+            if (e.deltaY <= -90) {
                 if (prev) prev(); 
             }
         }

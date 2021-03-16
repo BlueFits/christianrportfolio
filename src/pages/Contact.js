@@ -3,8 +3,6 @@ import SmallHeader from "../components/SmallHeader";
 
 import Colors from "../constants/Colors";
 
-import transitionImage from "../assets/images/blueTransitional.svg";
-
 import ScrollPageEvent from "../effects/ScrollPageEvent";
 
 const Contact = ({ prev }) => {
@@ -18,6 +16,7 @@ const Contact = ({ prev }) => {
     const submitHandler = (e) => {
         e.preventDefault();
         alert(`${email} ${subject} ${message}`);
+        console.log("Process this in a backend");
     }
 
     return (
