@@ -849,6 +849,55 @@ footer {
         width: 100%;
         padding: 0 10%;
     }
+    .blog_texts_container {
+        width: 80%;
+        border: 1px solid red blue;
+    }
+    .projects_ul {
+        display: none;
+    }
+    .project_container {
+        height: 50vh;
+        margin: 30px 0;
+        border-radius: 10px;
+    }
+    .contact_form_container {
+        border-radius: 0;
+    }
+    .contact_section {
+        padding: 0;
+    }
+    .contact_info {
+        display: none;
+    }
+    .contact_header_desc {
+        width: 80%;
+    }
+    .contact_body {
+        justify-content: center;
+        margin: 0;
+        padding: 0;
+    }
+    .contact_form {
+        width: 80%;
+    }
+    .footer_contents {
+        width: 100%;
+    }
+    .footer_header {
+        width: 100%;
+    }
+    #footer_header_text1 {
+        width: 100%;
+        text-align: center;
+    }
+    #footer_header_text2 {
+        text-align: center;
+        font-size: 21px;
+    }
+    .footer_nav {
+        display: none;
+    }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 960px) { /** tablet Version **/
