@@ -337,7 +337,7 @@ const App = () => {
 
   return (
     <div>
-      {/* <Splash /> */}
+      <Splash />
       <div className="hover_nav_container">
         <div onClick={pageHandler.bind(this, "home")} className={`circle-icon ${hoverNav[0]}`}></div>
         <div onClick={pageHandler.bind(this, "blogs", "blogs")} className={`circle-icon ${hoverNav[1]}`}></div>

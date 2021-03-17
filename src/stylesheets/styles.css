@@ -851,7 +851,6 @@ footer {
     }
     .blog_texts_container {
         width: 80%;
-        border: 1px solid red blue;
     }
     .projects_ul {
         display: none;
