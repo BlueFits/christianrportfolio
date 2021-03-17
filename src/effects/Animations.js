@@ -1,4 +1,4 @@
-export default {
+const Animations =  {
     fadeAndScale: {
         init: (elem) => {
             elem.style.opacity = "1";
@@ -30,3 +30,5 @@ export default {
         }
     },
 };
+
+export default Animations;

@@ -81,7 +81,7 @@ const Home = ({ navHandler, nextOnClick }) => {
                     <li><a className="link_styles"  target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/christian-rojas-16194a186">LinkedIn</a></li>
                 </ul>
                 <div onClick={navHandler} unselectable="on" className="nav_button_container">
-                    <HiMenuAlt4 size={28} size={35} className="nav_button"/>
+                    <HiMenuAlt4 size={35} className="nav_button"/>
                 </div>
             </nav>
             <header>
@@ -111,7 +111,7 @@ const Home = ({ navHandler, nextOnClick }) => {
                         love for programming.
                     </p>
 
-                    <img className="profile_photo" src="https://i.imgur.com/I4dMFbH.jpg" alt="profile-photo"/>
+                    <img className="profile_photo" src="https://i.imgur.com/I4dMFbH.jpg" alt="me_with_guitar"/>
 
                     <p id="center_text_body1_id" style={{ ...styles.transitionStyle }}>Today I am able to develop computer and mobile applications with languages like java and c++.</p>
                     <p id="center_text_body2_id" style={styles.transitionStyle}>

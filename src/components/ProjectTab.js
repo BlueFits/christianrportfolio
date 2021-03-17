@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 const ProjectTab = ({ projectId, imageUrl, title, description, showClass, logoImg, projectUrl, logoWidth, bgColor }) => {
 
@@ -11,6 +11,7 @@ const ProjectTab = ({ projectId, imageUrl, title, description, showClass, logoIm
             <div style={{ backgroundImage: `url(${imageUrl})`, backgroundColor: bgColor }} className="project_image_container">
                 <div className="project_logo_container" style={{ width: logoWidth }}>
                     <img 
+                        alt="project_background"
                         src={logoImg}
                         style={{ height: "100%", width: "100%" }} 
                     />

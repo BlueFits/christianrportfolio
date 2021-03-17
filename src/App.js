@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useTransition, animated, config } from 'react-spring';
 
 //Pages
 import NavMenu from "./pages/NavMenu";
@@ -8,14 +7,10 @@ import Blogs from "./pages/Blogs";
 import Project from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
-import Construction from "./pages/Construction";
 
 //Components
 import Splash from "./components/Splash";
-import NextTab from "./components/NextTab";
 
-//Constants
-import Colors from './constants/Colors';
 
 const App = () => {
 

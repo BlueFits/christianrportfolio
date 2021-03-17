@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { AiFillCloseCircle } from "react-icons/ai";
 import { HiOutlineMail } from "react-icons/hi";
 import { GrLocation } from "react-icons/gr";
@@ -31,11 +31,11 @@ const NavMenu = ({ onClick, navStatus, textStatus, navClick }) => {
 
                         <div className="nav_menu_socials">
                             <div>
-                                <img/>
+                                {/* <img/> */}
                                 <a href="https://www.facebook.com/profile.php?id=100047736457748" target="_blank" rel="noreferrer" className="menu_socials_text">Facebook</a>
                             </div>
                             <div>
-                                <img/>
+                                {/* <img/> */}
                                 <a href="https://www.linkedin.com/in/christian-rojas-16194a186" target="_blank" rel="noreferrer" className="menu_socials_text">LinkedIn</a>
                             </div>
                         </div>

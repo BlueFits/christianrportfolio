@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useRef } from "react";
 import { animated, useSpring, useChain, config } from "react-spring";
 
 import CogSvg from "../assets/images/Cog.svg";

@@ -39,15 +39,15 @@ const Contact = ({ prev }) => {
                 <div className="contact_body">
                     <div className="contact_info">
                         <div>
-                            <img/>
+                            {/* <img/> */}
                             <p>rojas.christian@outlook.com</p>
                         </div>
                         <div>
-                            <img/>
+                            {/* <img/> */}
                             <p>9 Coronation Dr, Toronto, ON, Canada</p>
                         </div>
                         <div>
-                            <img/>
+                            {/* <img/> */}
                             <p>+1-647-465-5315</p>
                         </div>
                     </div>
