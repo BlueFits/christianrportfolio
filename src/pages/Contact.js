@@ -44,7 +44,7 @@ const Contact = ({ prev }) => {
                         </div>
                         <div>
                             {/* <img/> */}
-                            <p>9 Coronation Dr, Toronto, ON, Canada</p>
+                            <p>Toronto, ON Canada</p>
                         </div>
                         <div>
                             {/* <img/> */}

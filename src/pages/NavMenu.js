@@ -21,7 +21,7 @@ const NavMenu = ({ onClick, navStatus, textStatus, navClick }) => {
                             </div>
                             <div>
                                 <GrLocation size={28} color={Colors.primary}/>
-                                <p>9 Coronation Dr. ON M1E2H2</p>
+                                <p>Toronto, ON Canada</p>
                             </div>
                             <div>
                                 <MdPhoneAndroid size={28} color={Colors.primary} />
