@@ -897,6 +897,11 @@ footer {
     .footer_nav {
         display: none;
     }
+    .nav_home_container {
+        position: absolute;
+        right: 0;
+        top: 20px;
+    }
 }
 
 @media only screen and (min-width: 501px) and (max-width: 960px) { /** tablet Version **/
