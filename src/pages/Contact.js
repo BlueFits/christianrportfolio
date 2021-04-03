@@ -15,7 +15,7 @@ const Contact = ({ prev }) => {
 
     const submitHandler = (e) => {
         e.preventDefault();
-        alert(`${email} ${subject} ${message}`);
+        alert(`Contact not working yet, you can reach me @rojas.christian@outlook.com`);
         console.log("Process this in a backend");
     }
 
