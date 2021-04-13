@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 //Pages
 import NavMenu from "./pages/NavMenu";
@@ -11,9 +11,8 @@ import Footer from "./pages/Footer";
 //Components
 import Splash from "./components/Splash";
 
-
 const App = () => {
-
+ 
   const [transition, setTransition] = useState([
     "current_page",
     "next_page",
@@ -52,6 +51,7 @@ const App = () => {
 
   //Projects Handlers
   const projectCategoryClickHandler = (category) => {
+    const bbteaseElem = document.getElementById("bbtease_id");
     const btyElem = document.getElementById("bty_project_id");
     const justReturnElem = document.getElementById("just_return_id");
 
@@ -76,18 +76,22 @@ const App = () => {
       all: () => {
         showAnim(btyElem);
         showAnim(justReturnElem);
+        showAnim(bbteaseElem);
       },
       website: () => {
         showAnim(btyElem);
         showAnim(justReturnElem);
+        showAnim(bbteaseElem);
       },
       illustration: () => {
-        showAnim(justReturnElem);
+        hideAnim(justReturnElem);
         hideAnim(btyElem);
+        hideAnim(bbteaseElem);
       },
       mobile: () => {
         showAnim(btyElem);
         hideAnim(justReturnElem);
+        hideAnim(bbteaseElem);
       },
     };
 
@@ -105,7 +109,6 @@ const App = () => {
             break;
           case "website":
             showStates.website();
-
 
             setSelectedProject([
               "",
@@ -258,23 +261,7 @@ const App = () => {
     }
 
     if (toPage === "projects") {
-        const btyElem = document.getElementById("bty_project_id");
-        const justReturnElem = document.getElementById("just_return_id");
-
-        const showAnim = (elem) => {
-          elem.style.display = "block"; 
-          elem.style.transform = "translateY(0px)";
-          elem.style.opacity = "1";
-        };
-
-        setSelectedProject([
-          "projects_selected",
-          "",
-          "",
-          "",
-        ]);
-        showAnim(btyElem);
-        showAnim(justReturnElem);
+      projectCategoryClickHandler("all");
     }
   }
 
@@ -332,7 +319,8 @@ const App = () => {
 
   return (
     <div>
-      <Splash />
+      {/* <Splash /> */}
+
       <div className="hover_nav_container">
         <div onClick={pageHandler.bind(this, "home")} className={`circle-icon ${hoverNav[0]}`}></div>
         <div onClick={pageHandler.bind(this, "blogs", "blogs")} className={`circle-icon ${hoverNav[1]}`}></div>

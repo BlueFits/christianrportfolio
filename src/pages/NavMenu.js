@@ -43,26 +43,34 @@ const NavMenu = ({ onClick, navStatus, textStatus, navClick }) => {
                     <ul>
                         <li 
                             onClick={() => {
-                                navClick("home");
                                 onClick();
+                                setTimeout(() => {
+                                    navClick("home");
+                                },500);
                             }}
                         ><span className={`nav_menu_options ${textStatus[0]}`}><h1>Home</h1></span></li>
                         <li
                             onClick={() => {
-                                navClick("blogs", "blogs");
                                 onClick();
+                                setTimeout(() => {
+                                    navClick("blogs", "blogs");
+                                },500);
                             }}
                         ><span className={`nav_menu_options ${textStatus[1]}`}><h1>Blogs</h1></span></li>
                         <li
                             onClick={() => {
-                                navClick("projects", "projects");
                                 onClick();
+                                setTimeout(() => {
+                                    navClick("projects", "projects");
+                                },500);
                             }}
                         ><span className={`nav_menu_options ${textStatus[2]}`}><h1>Work</h1></span></li>
                         <li
                             onClick={() => {
-                                navClick("contact");
                                 onClick();
+                                setTimeout(() => {
+                                    navClick("contact");
+                                },500);
                             }}                        
                         ><span className={`nav_menu_options ${textStatus[3]}`}><h1>Contact</h1></span></li>
                     </ul>

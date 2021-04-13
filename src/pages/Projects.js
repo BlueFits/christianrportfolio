@@ -53,6 +53,16 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
                 
                 <div className="projects_showcase">
                     <ProjectTab
+                        projectId={"bbtease_id"}
+                        title="BBTease"
+                        description="Restaurant Landing Page" 
+                        logoImg={"https://bbtease.com/static/media/LogoMain.3eb2e247.svg"}
+                        projectUrl={"https://bbtease.com/"}
+                        logoWidth={"70%"}
+                        bgColor={"#1f1f1f"}
+                    />
+
+                    <ProjectTab
                         projectId={"bty_project_id"}
                         imageUrl="https://raw.githubusercontent.com/BlueFits/personalWeb/master/src/assets/images/BetterThanYesterday/backdrop.png"
                         title="BetterThanYesterday"

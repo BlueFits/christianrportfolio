@@ -32,7 +32,7 @@ const Splash = () => {
     const progressSpring = useSpring({
         from: { width: "0%", number: 0 },
         to: { width: "100%", number: 100 },
-        config: { ...config.slow, duration: 3000 },
+        config: { ...config.slow, duration: 2000 },
         ref: progressRef,
     });
 
@@ -43,7 +43,7 @@ const Splash = () => {
         ref: elementRef,
     });
 
-    useChain([progressRef, elementRef, splashRef], [2, 6, 6.5]);
+    useChain([progressRef, elementRef, splashRef], [1, 4, 4.5]);
     return(      
         <animated.div style={{ ...splashAnim, overflowY: "hidden" }} className='splash_styles'>
             <animated.div style={elementSpring} className="splash_elements_container">

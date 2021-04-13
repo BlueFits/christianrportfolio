@@ -38,7 +38,6 @@ const ScrollPageEvent  = (elementId, callBack, prev) => {
 
         if (offset >= maxPageHeight) {
             if ((end.screenY - start.screenY) < 0) {
-                console.log("Scrolling down");
                 if (callBack) callBack();
             }
         } 
