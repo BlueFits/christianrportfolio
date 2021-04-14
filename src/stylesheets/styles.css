@@ -557,6 +557,7 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     min-height: 100vh; 
+    margin-bottom: 50px;
 }
 
 .project_container {
@@ -681,7 +682,7 @@ header {
 .contact_form > textarea,
 .contact_cta {
     margin: 15px 0;
-    border-radius: 15px;
+    border-radius: 10px;
     border: none;
     font-size: 16px;
 }
@@ -710,6 +711,20 @@ header {
     width: 150px;
     border: none;
     font-family: 'Roboto', sans-serif;
+    outline: none;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.contact_cta:hover {
+    background-color: var(--secondary_color);
+    color: #fff;
+    transform: translateY(-5px);
+}
+
+.contact_cta:active {
+    transform: translateY(0px);
+    background-color: var(--primary_color);
 }
 
 .contact_socials {
@@ -802,6 +817,7 @@ footer {
 .footer_nav > li {
     margin: 10px 0;
     font-size: 18px;
+    cursor: pointer;
 }
 
 .footer_disclaimer {

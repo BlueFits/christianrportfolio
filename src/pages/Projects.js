@@ -15,7 +15,7 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
     useEffect(() => {
         const projectElement = document.getElementById("project");
         const maxPageHeight = (projectElement.scrollHeight - projectElement.clientHeight) - 10;
-        const projectNextTab = document.getElementById("project_nextTab_id");
+        // const projectNextTab = document.getElementById("project_nextTab_id");
 
         const handleScroll = () => {
             const offset = projectElement.scrollTop;
@@ -25,11 +25,11 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
                 project.style.backgroundPositionY = (offset * 0.2) + "px";
             }
 
-            if (offset >= maxPageHeight) {
-                projectNextTab.style.transform = "translateY(0)";
-            } else {
-                projectNextTab.style.transform = "translateY(50px)";
-            }
+            // if (offset >= maxPageHeight) {
+            //     projectNextTab.style.transform = "translateY(0)";
+            // } else {
+            //     projectNextTab.style.transform = "translateY(50px)";
+            // }
 
         };
 
@@ -82,14 +82,14 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
                     />
                 </div>
 
-                <div id="project_nextTab_id" className="project_nextTab_container">
+                {/* <div id="project_nextTab_id" className="project_nextTab_container">
                     <NextTab 
                         text="Next: Contact"
                         color={Colors.lightblue}
                         textColor="#fff"
                         onClick={nextOnClick}
                     />
-                </div>
+                </div> */}
             </section>
         </div>
     ); 

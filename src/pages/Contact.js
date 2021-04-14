@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
+import validator from "validator";
 import SmallHeader from "../components/SmallHeader";
-
 import Colors from "../constants/Colors";
-
 import ScrollPageEvent from "../effects/ScrollPageEvent";
+import Server from "../config/Server";
 
 const Contact = ({ prev }) => {
 
@@ -13,11 +13,36 @@ const Contact = ({ prev }) => {
     const [subject, setSubject] = useState("");
     const [message, setMessage] = useState("");
 
-    const submitHandler = (e) => {
+    const submitHandler = async (e) => {
         e.preventDefault();
-        alert(`Contact not working yet, you can reach me @rojas.christian@outlook.com`);
-        console.log("Process this in a backend");
+
+        if (!validator.isEmail(email) || validator.isEmpty(email)) {
+            alert("Invalid Email");
+        } else {
+            const response = await fetch(Server + "send_message", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    email,
+                    subject,
+                    message,
+                }),
+            });
+
+            if (!response.ok) {
+                const errResData = await response.json();
+                alert(errResData.msg);
+            } else {
+                setEmail("");
+                setSubject("");
+                setMessage("");
+                alert("Successfully sent message");
+            }
+        }
     }
+
 
     return (
         <section className="contact_section">

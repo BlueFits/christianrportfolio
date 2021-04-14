@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-const Footer = () => {
+const Footer = ({ pageHandler }) => {
 
     useEffect(() => {
         const footerElement = document.getElementById("footer");
@@ -10,7 +10,7 @@ const Footer = () => {
         const handleScroll = () => {
             const offset = footerElement.scrollTop;
 
-            if (offset >= 1200) {
+            if (offset >= 800) {
                 footerHeaderText1.style.transform = "translateX(0)";
                 footerHeaderText1.style.opacity = "1";
 
@@ -39,10 +39,9 @@ const Footer = () => {
                     <p id="footer_header_text2"><strong>Let's make it an amazing one.</strong></p>
                 </div>
                 <ul className="footer_nav">
-                    <li>Home</li>
-                    <li>Blogs</li>
-                    <li>Work</li>
-                    <li>Contact</li>
+                    <li onClick={pageHandler.bind(this, "home")}>Home</li>
+                    <li onClick={pageHandler.bind(this, "blogs", "blogs")}>Blogs</li>
+                    <li onClick={pageHandler.bind(this, "projects", "projects")}>Work</li>
                     <li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=100047736457748">Facebook</a></li>
                     <li><a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/christian-rojas-16194a186">LinkedIn</a></li>
                 </ul>

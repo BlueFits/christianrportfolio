@@ -156,7 +156,6 @@ const App = () => {
     setBlogState("from_bottom");
 
     //Handle page reset here side note: contact has a naming error footer.
-
     let pageReset = {
       home: document.getElementById("home"),
       projects: document.getElementById("project"),
@@ -218,7 +217,6 @@ const App = () => {
       ]);
 
     } else if (motion === "projects") {
-
       setTransition([
         "",
         "",
@@ -359,7 +357,7 @@ const App = () => {
       
       <div style={{ zIndex: 0 }} className={`section_container ${transition[3]}`} id="footer">
         <Contact prev={pageHandler.bind(this, "projects", "projects")}/>
-        <Footer />
+        <Footer pageHandler={pageHandler} />
       </div>
     </div>
   )

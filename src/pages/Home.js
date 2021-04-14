@@ -34,7 +34,7 @@ const Home = ({ navHandler, nextOnClick }) => {
             const offset = homeElement.scrollTop;
 
             if (offset >= maxPageHeight) {
-                document.getElementById("home_nextTab_Id").style.transform = "translateY(0)";
+                document.getElementById("home_nextTab_Id").style.transform = "translateY(-15px)";
             } else {
                 document.getElementById("home_nextTab_Id").style.transform = "translateY(100px)";
             }
@@ -124,8 +124,8 @@ const Home = ({ navHandler, nextOnClick }) => {
 
             <div id="home_nextTab_Id" className="home_nextTab_container">
                 <NextTab 
-                    text="Next: Blogs"
-                    color={Colors.secondary}
+                    text="Scroll To Next Page"
+                    // color={Colors.secondary}
                     textColor="#fff"
                     onClick={nextOnClick}
                 />

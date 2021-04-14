@@ -25,14 +25,14 @@ const Blogs = ({ blogState, nextOnClick, blogNextHidden, prev }) => {
         <section className="blog_section">
             {blogs[blogIndex]}
 
-            <div className={`blog_next_container ${blogNextHidden}`}>
+            {/* <div className={`blog_next_container ${blogNextHidden}`}>
                 <NextTab 
                     text="Next: Projects"
                     color={Colors.lightgrey}
                     textColor={Colors.darkgrey}
                     onClick={ nextOnClick }
                 />
-            </div>
+            </div> */}
         </section>
     );
 };
