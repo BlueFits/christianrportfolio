@@ -899,6 +899,7 @@ footer {
     }
     .projects_showcase {
         width: 100%;
+        margin-bottom: 0;
     }
     .project_container:hover {
         box-shadow: none;
