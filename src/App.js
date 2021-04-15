@@ -11,6 +11,9 @@ import Footer from "./pages/Footer";
 //Components
 import Splash from "./components/Splash";
 
+//Effects
+import Animations from "./effects/Animations";
+
 const App = () => {
  
   const [transition, setTransition] = useState([
@@ -57,9 +60,12 @@ const App = () => {
 
     //Anim Functions
     const showAnim = (elem) => {
-      elem.style.transform = "translateY(0px)";
-      elem.style.opacity = "1";
       elem.style.display = "block"; 
+
+      setTimeout(() => {
+        elem.style.transform = "translateY(0px)";
+        elem.style.opacity = "1";
+      }, 50);
     };
 
     const hideAnim = (elem) => {
@@ -90,6 +96,11 @@ const App = () => {
       },
       mobile: () => {
         showAnim(btyElem);
+        hideAnim(justReturnElem);
+        hideAnim(bbteaseElem);
+      },
+      none: () => {
+        hideAnim(btyElem);
         hideAnim(justReturnElem);
         hideAnim(bbteaseElem);
       },
@@ -137,13 +148,18 @@ const App = () => {
               "projects_selected",
             ]);
             break;
-          default:
-            showStates.all();
+          case "none":
+            showStates.none();
+            break;
       }
   };
 
   //App.js Handlers
   const pageHandler = (motion, toPage) => {
+    //Elements
+    const projectHeader = document.getElementById("project_header_id");
+    const projectUl = document.getElementById("project_ul_id");
+
     let arrClone = [...transition];
     let navClone = [...hoverNav];
     const i = arrClone.indexOf("current_page");
@@ -169,6 +185,20 @@ const App = () => {
         }, 600);
       }
     }
+
+    //Reset project animations
+    if (motion === "home" || motion === "blogs" || motion === "contact") {
+      setTimeout(() => {
+        projectCategoryClickHandler("none");
+        Animations.fadeFromBottom.onAnim(projectHeader);
+        Animations.fadeFromBottom.onAnim(projectUl);
+        setSelectedProject([
+          "projects_selected",
+          "",
+          "",
+          "",
+        ]);
+      }, 400);    }
 
     if (motion === "next" && arrClone[i + 1]) {
 
@@ -215,7 +245,6 @@ const App = () => {
         "",
         "",
       ]);
-
     } else if (motion === "projects") {
       setTransition([
         "",
@@ -229,6 +258,14 @@ const App = () => {
         "circle-filled",
         "",
       ]);
+
+      setTimeout(() => {
+        Animations.fadeFromBottom.init(projectHeader);
+      }, 400);
+
+      setTimeout(() => {
+        Animations.fadeFromBottom.init(projectUl);
+      }, 500);
 
     } else if (motion === "contact") {
 
@@ -244,10 +281,15 @@ const App = () => {
         "",
         "circle-filled",
       ]);
-
+      setSelectedProject([
+        "projects_selected",
+        "",
+        "",
+        "",
+      ]);
     }
 
-    //Blogs animation reveal
+    //Reveal Animations
     if (toPage === "blogs") {
       setTimeout(() => {
         setBlogState("");
@@ -259,7 +301,9 @@ const App = () => {
     }
 
     if (toPage === "projects") {
-      projectCategoryClickHandler("all");
+      setTimeout(() => {
+        projectCategoryClickHandler("all");
+      }, 600);
     }
   }
 

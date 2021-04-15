@@ -42,8 +42,8 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
             <section className="projects_section">
                 <div className="project_header">
                     <SmallHeader text="Portfolio" color="black"/>
-                    <h1 style={{ color: Colors.darkgrey }}>Look at My Products.</h1>
-                    <ul className="projects_ul">
+                    <h1 id="project_header_id" style={{...styles.transitionStyle, color: Colors.darkgrey }}>Look at My Products.</h1>
+                    <ul id="project_ul_id" style={styles.transitionStyle} className="projects_ul">
                         <li className={`projects_category ${selected[0]}`} onClick={projectCategoryClickHandler.bind(this, "all")}>All</li>
                         <li className={`projects_category ${selected[1]}`} onClick={projectCategoryClickHandler.bind(this, "website")}>Websites</li>
                         <li className={`projects_category ${selected[2]}`} onClick={projectCategoryClickHandler.bind(this, "illustration")}>Illustration</li>
@@ -93,6 +93,12 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
             </section>
         </div>
     ); 
+};
+
+const styles = {
+    transitionStyle: {
+        transition: "0.3s ease-in-out"
+    }
 };
 
 export default Projects;
