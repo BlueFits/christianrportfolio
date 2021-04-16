@@ -79,6 +79,7 @@ const Home = ({ navHandler, nextOnClick }) => {
                     <li><AnchorLink className="anchorLink_style" herf="#">Christian Rojas</AnchorLink></li>
                     <li><a className="link_styles" target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=100047736457748">Facebook</a></li>
                     <li><a className="link_styles"  target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/christian-rojas-16194a186">LinkedIn</a></li>
+                    <li><a className="link_styles"  target="_blank" rel="noreferrer" href="https://github.com/BlueFits">Github</a></li>
                 </ul>
                 <div onClick={navHandler} unselectable="on" className="nav_button_container">
                     <HiMenuAlt4 size={35} className="nav_button"/>

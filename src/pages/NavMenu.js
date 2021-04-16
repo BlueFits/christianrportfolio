@@ -38,6 +38,10 @@ const NavMenu = ({ onClick, navStatus, textStatus, navClick }) => {
                                 {/* <img/> */}
                                 <a href="https://www.linkedin.com/in/christian-rojas-16194a186" target="_blank" rel="noreferrer" className="menu_socials_text">LinkedIn</a>
                             </div>
+                            <div>
+                                {/* <img/> */}
+                                <a href="https://github.com/BlueFits" target="_blank" rel="noreferrer" className="menu_socials_text">Github</a>
+                            </div>
                         </div>
                     </div>
                     <ul>
