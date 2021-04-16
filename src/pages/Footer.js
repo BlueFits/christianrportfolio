@@ -39,7 +39,7 @@ const Footer = ({ pageHandler }) => {
                     <p id="footer_header_text2"><strong>Let's make it an amazing one.</strong></p>
                 </div>
                 <ul className="footer_nav">
-                    <li onClick={pageHandler.bind(this, "home")}>Home</li>
+                    <li onClick={pageHandler.bind(this, "home")}>About</li>
                     <li onClick={pageHandler.bind(this, "blogs", "blogs")}>Blogs</li>
                     <li onClick={pageHandler.bind(this, "projects", "projects")}>Work</li>
                     <li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=100047736457748">Facebook</a></li>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const ProjectTab = ({ projectId, imageUrl, title, description, showClass, logoImg, projectUrl, logoWidth, bgColor }) => {
+const ProjectTab = ({ projectId, imageUrl, title, description, showClass, logoImg, projectUrl, logoWidth, bgColor, technologies }) => {
 
     const onClickHandler = () => {
         window.open(projectUrl, '_blank').focus();
@@ -18,8 +18,9 @@ const ProjectTab = ({ projectId, imageUrl, title, description, showClass, logoIm
                 </div>
             </div>
             <div className="project_description">
-                <h2>{title}</h2>
+                <h2 style={{ marginBottom: 7 }}>{title}</h2>
                 <p>{description}</p>
+                <p className="project_tech_desc">{technologies}</p>
             </div>
         </div>
     );

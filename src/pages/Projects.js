@@ -42,12 +42,12 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
             <section className="projects_section">
                 <div className="project_header">
                     <SmallHeader text="Portfolio" color="black"/>
-                    <h1 id="project_header_id" style={{...styles.transitionStyle, color: Colors.darkgrey }}>Look at My Products.</h1>
+                    <h1 id="project_header_id" style={{...styles.transitionStyle, color: Colors.darkgrey }}>Take A Look At My Work</h1>
                     <ul id="project_ul_id" style={styles.transitionStyle} className="projects_ul">
                         <li className={`projects_category ${selected[0]}`} onClick={projectCategoryClickHandler.bind(this, "all")}>All</li>
                         <li className={`projects_category ${selected[1]}`} onClick={projectCategoryClickHandler.bind(this, "website")}>Websites</li>
-                        <li className={`projects_category ${selected[2]}`} onClick={projectCategoryClickHandler.bind(this, "illustration")}>Illustration</li>
                         <li className={`projects_category ${selected[3]}`} onClick={projectCategoryClickHandler.bind(this, "mobile")}>Mobile</li>
+                        <li className={`projects_category ${selected[2]}`} onClick={projectCategoryClickHandler.bind(this, "design")}>Design</li>
                     </ul>
                 </div>
                 
@@ -60,6 +60,7 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
                         projectUrl={"https://bbtease.com/"}
                         logoWidth={"70%"}
                         bgColor={"#1f1f1f"}
+                        technologies={"React | NodeJs "}
                     />
 
                     <ProjectTab
@@ -69,6 +70,7 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
                         description="Mobile App, Landing Page" 
                         logoImg={"https://raw.githubusercontent.com/BlueFits/personalWeb/master/src/assets/images/BetterThanYesterday/logo.png"}
                         projectUrl={"https://betterthanyesterdayapp.herokuapp.com/"}
+                        technologies={"React | React-Native | Redux | Redux-Thunk | NodeJS | MongoDB "}
                     />
 
                     <ProjectTab
@@ -79,6 +81,7 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
                         projectUrl={"https://justreturn.herokuapp.com/"}
                         logoWidth={"70%"}
                         bgColor={"#00887A"}
+                        technologies={"React | NodeJS | MongoDB"}
                     />
                 </div>
 

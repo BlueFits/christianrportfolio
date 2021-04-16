@@ -104,7 +104,7 @@ const Home = ({ navHandler, nextOnClick }) => {
                 </div>
             </header>
             <div className="home_about">
-                <SmallHeader text="What I Do"/>
+                <SmallHeader text="About Me"/>
                 <div className="center_text">
                     <p id="center_text_top_id" style={{ ...styles.transitionStyle, opacity: 0 }}>
                         Hi there! I'm Christian, a 21 year old from Toronto, Canada. Coding has been a hobby of mine ever since 

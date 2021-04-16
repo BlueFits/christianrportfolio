@@ -42,9 +42,9 @@ p {
 }
 
 .soft_shadow {
-    -webkit-box-shadow: 0px 7px 45px -9px rgba(0,0,0,0.29);
-    -moz-box-shadow: 0px 7px 45px -9px rgba(0,0,0,0.29);
-    box-shadow: 0px 7px 45px -9px rgba(0,0,0,0.29);
+    -webkit-box-shadow: 0px 7px 45px -9px rgba(201, 201, 201, 0.29);
+    -moz-box-shadow: 0px 7px 45px -9px rgba(189, 189, 189, 0.29);
+    box-shadow: 0px 7px 45px -9px rgba(197, 197, 197, 0.29);
 }
 
 .splash_styles {
@@ -562,7 +562,7 @@ header {
 
 .project_container {
     cursor: pointer;
-    height: 580px;
+    height: 600px;
     width: 530px;
     border-radius: 30px;
     overflow: hidden;
@@ -578,7 +578,8 @@ header {
 }
 
 .project_container:hover {
-    box-shadow: 0px 10px 35px 16px #8F8F8F;
+    -webkit-box-shadow: 0px 0px 50px 11px #B4B4B4; 
+    box-shadow: 0px 0px 50px 11px #B4B4B4;
 }
 
 .project_nextTab_container {
@@ -616,8 +617,10 @@ header {
     color: var(--darkgrey);
 }
 
-.project_description > p {
-    margin-top: 5px;
+.project_tech_desc {
+    font-size: 14px;
+    color: grey;
+    margin-top: 3px;
 }
 
 .contact_section {

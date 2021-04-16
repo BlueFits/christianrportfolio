@@ -52,7 +52,7 @@ const NavMenu = ({ onClick, navStatus, textStatus, navClick }) => {
                                     navClick("home");
                                 },500);
                             }}
-                        ><span className={`nav_menu_options ${textStatus[0]}`}><h1>Home</h1></span></li>
+                        ><span className={`nav_menu_options ${textStatus[0]}`}><h1>About</h1></span></li>
                         <li
                             onClick={() => {
                                 onClick();

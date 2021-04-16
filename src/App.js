@@ -89,7 +89,7 @@ const App = () => {
         showAnim(justReturnElem);
         showAnim(bbteaseElem);
       },
-      illustration: () => {
+      design: () => {
         hideAnim(justReturnElem);
         hideAnim(btyElem);
         hideAnim(bbteaseElem);
@@ -128,8 +128,8 @@ const App = () => {
               "",
             ]);
             break;
-          case "illustration":
-            showStates.illustration();
+          case "design":
+            showStates.design();
 
             setSelectedProject([
               "",
