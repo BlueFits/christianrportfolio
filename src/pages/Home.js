@@ -116,7 +116,8 @@ const Home = ({ navHandler, nextOnClick }) => {
                     <p id="center_text_body1_id" style={{ ...styles.transitionStyle }}>
                         Fast-forward to today, I am able to 
                         make software on both mobile and computer platforms using different programming 
-                        languages like JavaScript, Java, or Python.
+                        languages like JavaScript, Java, or Python. My main focus these days is building
+                        responsive and interactive websites using the MERN stack.
                     </p>
                     <p id="center_text_body2_id" style={styles.transitionStyle}>
                         For a complete summary of all my skills refer to my portfolio.
