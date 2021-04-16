@@ -58,7 +58,7 @@ const Home = ({ navHandler, nextOnClick }) => {
                 Animations.fadeAndScale.onAnim(centerBody2);
             }
 
-            if (offset >= 1450) {
+            if (offset >= 1420) {
                 Animations.fadeAndScale.init(centerConclusion);
             } else {
                 Animations.fadeAndScale.onAnim(centerConclusion);
@@ -107,19 +107,38 @@ const Home = ({ navHandler, nextOnClick }) => {
                 <SmallHeader text="About Me"/>
                 <div className="center_text">
                     <p id="center_text_top_id" style={{ ...styles.transitionStyle, opacity: 0 }}>
-                        Hi there! I'm Christian, a 21 year old from Toronto, Canada. Coding has been a hobby of mine ever since 
-                        I was a kid. What started from playing around with java, doing simple applications, developed in to a 
+                        Hi there! I'm Christian, a 21 year old from Toronto, Canada. What started from playing around with java as a kid, building simple applications for fun, developed in to a 
                         love for programming.
                     </p>
 
                     <img className="profile_photo" src="https://i.imgur.com/I4dMFbH.jpg" alt="me_with_guitar"/>
 
-                    <p id="center_text_body1_id" style={{ ...styles.transitionStyle }}>Today I am able to develop computer and mobile applications with languages like java and c++.</p>
-                    <p id="center_text_body2_id" style={styles.transitionStyle}>
-                        Web development is also one of my passions. I love the whole process, from designing, 
-                        all the way to development. Creating unique and pleasant website experiences is what I'm all about.
+                    <p id="center_text_body1_id" style={{ ...styles.transitionStyle }}>
+                        Fast-forward to today, I am able to 
+                        make software on both mobile and computer platforms using different programming 
+                        languages like JavaScript, Java, or Python.
                     </p>
-                    <p id="center_text_conclusion_id" style={styles.transitionStyle}>For a complete summary of all my skills refer to my portfolio.</p>
+                    <p id="center_text_body2_id" style={styles.transitionStyle}>
+                        For a complete summary of all my skills refer to my portfolio.
+                    </p>
+                    {/* <p id="center_text_conclusion_id" style={styles.transitionStyle}>For a complete summary of all my skills refer to my portfolio.</p> */}
+                    {/* <ul className="tech_ul_style" id="center_text_conclusion_id" style={styles.transitionStyle}>
+                        <div>
+                            <li>JavaScript (ES6+)</li>
+                            <li>Node.js</li>
+                            <li>React</li>
+                        </div>
+                        <div>
+                            <li>React-Native</li>
+                            <li>MongoDB</li>
+                            <li>Express</li>
+                        </div>
+                    </ul> */}
+                </div>
+                <div id="center_text_conclusion_id" style={styles.transitionStyle} className="about_cta_container">
+                    <div className="about_cta" onClick={() => window.open("https://drive.google.com/file/d/1sPkenzicG5SeTztVDsiDcgtn5Ykqkfx4/view?usp=sharing", '_blank').focus()}>
+                        <p>DOWNLOAD CV</p>
+                    </div>
                 </div>
             </div>
 

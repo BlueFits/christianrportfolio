@@ -328,6 +328,46 @@ nav {
     cursor: pointer;
 }
 
+.tech_ul_style {
+    display: flex;
+    list-style: inside;
+    font-size: 14px;
+}
+
+.tech_ul_style > div {
+    margin-right: 80px;
+}
+
+.tech_ul_style > div > li {
+    margin-bottom: 10px;
+}
+
+.about_cta_container {
+    display: flex;
+    /* width: 500px; */
+}
+
+.about_cta {
+    border: 1px solid #fff;
+    height: 55px;
+    width: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+    transform: scale(1);
+    margin-top: 15px;
+}
+
+.about_cta:hover {
+    background-color: var(--secondary_color);
+    color: var(--primary_color);
+    border-color: var(--secondary_color);
+    transform: scale(1.1);
+}
+
 .home_section {
     width: 100%;
     background-color: var(--primary_color);
