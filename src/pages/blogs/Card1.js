@@ -19,7 +19,7 @@ const Sample = ({ blogState }) => {
                 </div>
 
                 <div className="cta_1">
-                    <p>Read More</p>
+                    <p>Unavailable</p>
                 </div>
             </div>
         </div>
