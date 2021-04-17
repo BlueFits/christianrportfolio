@@ -57,6 +57,7 @@ const App = () => {
     const bbteaseElem = document.getElementById("bbtease_id");
     const btyElem = document.getElementById("bty_project_id");
     const justReturnElem = document.getElementById("just_return_id");
+    const hangryElem = document.getElementById("hangry_id");
 
     //Anim Functions
     const showAnim = (elem) => {
@@ -83,26 +84,31 @@ const App = () => {
         showAnim(btyElem);
         showAnim(justReturnElem);
         showAnim(bbteaseElem);
+        showAnim(hangryElem);
       },
       website: () => {
         showAnim(btyElem);
         showAnim(justReturnElem);
         showAnim(bbteaseElem);
+        hideAnim(hangryElem);
       },
       design: () => {
         hideAnim(justReturnElem);
         hideAnim(btyElem);
         hideAnim(bbteaseElem);
+        hideAnim(hangryElem);
       },
       mobile: () => {
         showAnim(btyElem);
         hideAnim(justReturnElem);
         hideAnim(bbteaseElem);
+        showAnim(hangryElem);
       },
       none: () => {
         hideAnim(btyElem);
         hideAnim(justReturnElem);
         hideAnim(bbteaseElem);
+        hideAnim(hangryElem);
       },
     };
 

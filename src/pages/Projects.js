@@ -83,6 +83,17 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
                         bgColor={"#00887A"}
                         technologies={"React | NodeJS | MongoDB"}
                     />
+
+                    <ProjectTab
+                        projectId={"hangry_id"}
+                        title="Hangry App"
+                        description="Mobile App" 
+                        logoImg={"https://www.joshuaghori.com/images/pic3.jpg"}
+                        projectUrl={"https://play.google.com/store/apps/details?id=com.group.hangry"}
+                        logoWidth={"70%"}
+                        bgColor={"#fff"}
+                        technologies={"React-Native | Redux | Redux-Thunk | MongoDB"}
+                    />
                 </div>
 
                 {/* <div id="project_nextTab_id" className="project_nextTab_container">
