@@ -384,7 +384,7 @@ const App = () => {
       />
 
       <div style={{ zIndex: 3 }} className={`section_container ${transition[0]}`} id="home">
-        <Home navHandler={navHandler} nextOnClick={pageHandler.bind(this, "blogs", "blogs")}/>
+        <Home navHandler={navHandler} nextOnClick={pageHandler.bind(this, "blogs", "blogs")} openProject={pageHandler.bind(this, "projects", "projects")}/>
       </div>
 
       <div style={{ zIndex: 2 }} className={`section_container ${transition[1]}`} id="blogs">

@@ -15,7 +15,7 @@ import SmallHeader from "../components/SmallHeader";
 
 import CompSci from "../assets/images/CompSci.svg";
 
-const Home = ({ navHandler, nextOnClick }) => {
+const Home = ({ navHandler, nextOnClick, openProject }) => {
 
     useEffect(() => ParallaxEffect("home", "home_parallax", 0.35), [ParallaxEffect]);
     useEffect(() => ScrollPageEvent("home", nextOnClick), [ScrollPageEvent]);
@@ -87,19 +87,27 @@ const Home = ({ navHandler, nextOnClick }) => {
             </nav>
             <header>
                 <div className="header_elems_container">
-                    <div className="img_header_container">
-                        <img height="100%" src={CompSci} alt="compSci.svg"/>
-                    </div>
-                    <div className="header_text">
-                        <h1>
-                            Hello, my name's Christian. I am a &nbsp;
-                            <TextLoop>
-                                <span>software engineer</span>
-                                <span>Web Developer</span>
-                                <span>Backend Developer</span>
-                            </TextLoop>
-                            .
-                        </h1>
+                    <div>
+                        <span className="header_sub_text">Hi, my name is</span>
+                        <div className="header_main_text">
+                            <h1>Christian Rojas.</h1>
+                            <h1 className="text_secondary">I am a software engineer.</h1>
+                        </div>
+                        <div className="header_description text_secondary">
+                            <p>
+                                I'm a Toronto-based software engineer who specializes in
+                                building responsive and interactive digital experiences in
+                                both mobile and computer platforms.
+                            </p>
+                        </div>
+                        <div className="header_buttons_container">
+                            <div className="about_cta" onClick={() => openProject()}>
+                                <p>PROJECTS</p>
+                            </div>
+                            <div className="about_cta" onClick={() => window.open("https://drive.google.com/file/d/1sPkenzicG5SeTztVDsiDcgtn5Ykqkfx4/view?usp=sharing", '_blank').focus()}>
+                                <p>DOWNLOAD CV</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -120,10 +128,10 @@ const Home = ({ navHandler, nextOnClick }) => {
                         responsive and interactive websites using the MERN stack.
                     </p>
                     <p id="center_text_body2_id" style={styles.transitionStyle}>
-                        For a complete summary of all my skills refer to my portfolio.
+                        Here are a few technologies I've been working with recently:
                     </p>
                     {/* <p id="center_text_conclusion_id" style={styles.transitionStyle}>For a complete summary of all my skills refer to my portfolio.</p> */}
-                    {/* <ul className="tech_ul_style" id="center_text_conclusion_id" style={styles.transitionStyle}>
+                    <ul className="tech_ul_style" id="center_text_conclusion_id" style={styles.transitionStyle}>
                         <div>
                             <li>JavaScript (ES6+)</li>
                             <li>Node.js</li>
@@ -134,12 +142,7 @@ const Home = ({ navHandler, nextOnClick }) => {
                             <li>MongoDB</li>
                             <li>Express</li>
                         </div>
-                    </ul> */}
-                </div>
-                <div id="center_text_conclusion_id" style={styles.transitionStyle} className="about_cta_container">
-                    <div className="about_cta" onClick={() => window.open("https://drive.google.com/file/d/1sPkenzicG5SeTztVDsiDcgtn5Ykqkfx4/view?usp=sharing", '_blank').focus()}>
-                        <p>DOWNLOAD CV</p>
-                    </div>
+                    </ul>
                 </div>
             </div>
 
