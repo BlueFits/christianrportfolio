@@ -88,7 +88,10 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
             <header>
                 <div className="header_elems_container">
                     <div className="header_texts_container">
-                        <span className="header_sub_text">Hi, my name is</span>
+                        <div className="header_sub_text_container">
+                            <div style={{ borderColor: Colors.secondary }} className="thin_line" />
+                            <span className="header_sub_text">Hi, my name is</span>
+                        </div>
                         <div className="header_main_text">
                             <h1>Christian Rojas.</h1>
                             <h1 className="text_secondary">I am a software engineer.</h1>
@@ -112,8 +115,8 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                 </div>
             </header>
             <div className="home_about">
-                <SmallHeader text="About Me"/>
-                <div className="center_text">
+                <SmallHeader color={Colors.secondary} text="About Me"/>
+                <div className="center_text text_secondary">
                     <p id="center_text_top_id" style={{ ...styles.transitionStyle, opacity: 0 }}>
                         Hi there! I'm Christian, a 21 year old from Toronto, Canada. What started from playing around with java as a kid, building simple applications for fun, developed in to a 
                         love for programming.
@@ -123,9 +126,9 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
 
                     <p id="center_text_body1_id" style={{ ...styles.transitionStyle }}>
                         Fast-forward to today, I am able to 
-                        make software on both mobile and computer platforms using different programming 
+                        make software on both <span style={{ color: "#fff" }}>mobile and computer platforms</span> using different programming 
                         languages like JavaScript, Java, or Python. My main focus these days is building
-                        responsive and interactive websites using the MERN stack.
+                        responsive and interactive websites using the <span style={{ color: "#fff" }}>MERN stack.</span>
                     </p>
                     <p id="center_text_body2_id" style={styles.transitionStyle}>
                         Here are a few technologies I've been working with recently:

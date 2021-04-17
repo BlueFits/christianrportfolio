@@ -401,9 +401,15 @@ header {
     display: flex;
 }
 
+.header_sub_text_container {
+    display: flex;
+    align-items: center;
+}
+
 .header_sub_text {
     color: var(--secondary_color);
     font-size: 16px;
+    margin-left: 15px;
 }
 
 .header_main_text {
@@ -436,8 +442,8 @@ header {
 }
 
 .thin_line {
-    border: 0.5px solid #fff;
-    width: 50px;
+    border: 1px solid #fff;
+    width: 45px;
 }
 
 .home_about {
