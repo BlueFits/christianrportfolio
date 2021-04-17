@@ -87,7 +87,7 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
             </nav>
             <header>
                 <div className="header_elems_container">
-                    <div>
+                    <div className="header_texts_container">
                         <span className="header_sub_text">Hi, my name is</span>
                         <div className="header_main_text">
                             <h1>Christian Rojas.</h1>
