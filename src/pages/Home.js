@@ -89,8 +89,9 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                 <div className="header_elems_container">
                     <div className="header_texts_container">
                         <div className="header_sub_text_container">
-                            <div style={{ borderColor: Colors.secondary }} className="thin_line" />
+                            {/* <div style={{ borderColor: Colors.secondary }} className="thin_line" /> */}
                             <span className="header_sub_text">Hi, my name is</span>
+                            {/* <div style={{ borderColor: Colors.secondary }} className="thin_line" /> */}
                         </div>
                         <div className="header_main_text">
                             <h1>Christian Rojas.</h1>
