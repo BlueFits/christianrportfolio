@@ -89,7 +89,7 @@ const Projects = ({ projectShowClass, projectCategoryClickHandler, selected, nex
                         title="Hangry App"
                         description="Mobile App" 
                         logoImg={"https://www.joshuaghori.com/images/pic3.jpg"}
-                        projectUrl={"https://play.google.com/store/apps/details?id=com.group.hangry"}
+                        projectUrl={"https://play.google.com/store/apps/details?id=com.hangrygroup.qrunch"}
                         logoWidth={"70%"}
                         bgColor={"#fff"}
                         technologies={"React-Native | Redux | Redux-Thunk | MongoDB"}
