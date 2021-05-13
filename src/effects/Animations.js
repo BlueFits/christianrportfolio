@@ -1,4 +1,12 @@
 const Animations =  {
+    fade: {
+        init: (elem) => {
+            elem.style.opacity = "1";
+        },
+        onAnim: (elem) => {
+            elem.style.opacity = "0";
+        },
+    },
     fadeFromBottom: {
         init: (elem) => {
             elem.style.opacity = "1";

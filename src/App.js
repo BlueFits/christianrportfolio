@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 //Pages
 import NavMenu from "./pages/NavMenu";
 import Home from "./pages/Home";
 import Blogs from "./pages/Blogs";
 import Project from "./pages/Projects";
+import Work from "./pages/Work";
 import Contact from "./pages/Contact";
 import Footer from "./pages/Footer";
 
@@ -53,112 +54,112 @@ const App = () => {
   ]);
 
   //Projects Handlers
-  const projectCategoryClickHandler = (category) => {
-    const bbteaseElem = document.getElementById("bbtease_id");
-    const btyElem = document.getElementById("bty_project_id");
-    const justReturnElem = document.getElementById("just_return_id");
-    const hangryElem = document.getElementById("hangry_id");
+  // const projectCategoryClickHandler = (category) => {
+  //   const bbteaseElem = document.getElementById("bbtease_id");
+  //   const btyElem = document.getElementById("bty_project_id");
+  //   const justReturnElem = document.getElementById("just_return_id");
+  //   const hangryElem = document.getElementById("hangry_id");
 
-    //Anim Functions
-    const showAnim = (elem) => {
-      elem.style.display = "block"; 
+  //   //Anim Functions
+  //   const showAnim = (elem) => {
+  //     elem.style.display = "block"; 
 
-      setTimeout(() => {
-        elem.style.transform = "translateY(0px)";
-        elem.style.opacity = "1";
-      }, 50);
-    };
+  //     setTimeout(() => {
+  //       elem.style.transform = "translateY(0px)";
+  //       elem.style.opacity = "1";
+  //     }, 50);
+  //   };
 
-    const hideAnim = (elem) => {
-      elem.style.opacity = "0";
-      elem.style.transform = "translateY(60px)";
+  //   const hideAnim = (elem) => {
+  //     elem.style.opacity = "0";
+  //     elem.style.transform = "translateY(60px)";
 
-      setTimeout(() => {
-        elem.style.display = "none"; 
-      }, 500);
-    };
+  //     setTimeout(() => {
+  //       elem.style.display = "none"; 
+  //     }, 500);
+  //   };
 
-    //State Object
-    const showStates = {
-      all: () => {
-        showAnim(btyElem);
-        showAnim(justReturnElem);
-        showAnim(bbteaseElem);
-        showAnim(hangryElem);
-      },
-      website: () => {
-        showAnim(btyElem);
-        showAnim(justReturnElem);
-        showAnim(bbteaseElem);
-        hideAnim(hangryElem);
-      },
-      design: () => {
-        hideAnim(justReturnElem);
-        hideAnim(btyElem);
-        hideAnim(bbteaseElem);
-        hideAnim(hangryElem);
-      },
-      mobile: () => {
-        showAnim(btyElem);
-        hideAnim(justReturnElem);
-        hideAnim(bbteaseElem);
-        showAnim(hangryElem);
-      },
-      none: () => {
-        hideAnim(btyElem);
-        hideAnim(justReturnElem);
-        hideAnim(bbteaseElem);
-        hideAnim(hangryElem);
-      },
-    };
+  //   //State Object
+  //   const showStates = {
+  //     all: () => {
+  //       showAnim(btyElem);
+  //       showAnim(justReturnElem);
+  //       showAnim(bbteaseElem);
+  //       showAnim(hangryElem);
+  //     },
+  //     website: () => {
+  //       showAnim(btyElem);
+  //       showAnim(justReturnElem);
+  //       showAnim(bbteaseElem);
+  //       hideAnim(hangryElem);
+  //     },
+  //     design: () => {
+  //       hideAnim(justReturnElem);
+  //       hideAnim(btyElem);
+  //       hideAnim(bbteaseElem);
+  //       hideAnim(hangryElem);
+  //     },
+  //     mobile: () => {
+  //       showAnim(btyElem);
+  //       hideAnim(justReturnElem);
+  //       hideAnim(bbteaseElem);
+  //       showAnim(hangryElem);
+  //     },
+  //     none: () => {
+  //       hideAnim(btyElem);
+  //       hideAnim(justReturnElem);
+  //       hideAnim(bbteaseElem);
+  //       hideAnim(hangryElem);
+  //     },
+  //   };
 
 
-      switch (category) {
-          case "all":
-            showStates.all();
+  //     switch (category) {
+  //         case "all":
+  //           showStates.all();
 
-            setSelectedProject([
-              "projects_selected",
-              "",
-              "",
-              "",
-            ]);
-            break;
-          case "website":
-            showStates.website();
+  //           setSelectedProject([
+  //             "projects_selected",
+  //             "",
+  //             "",
+  //             "",
+  //           ]);
+  //           break;
+  //         case "website":
+  //           showStates.website();
 
-            setSelectedProject([
-              "",
-              "projects_selected",
-              "",
-              "",
-            ]);
-            break;
-          case "design":
-            showStates.design();
+  //           setSelectedProject([
+  //             "",
+  //             "projects_selected",
+  //             "",
+  //             "",
+  //           ]);
+  //           break;
+  //         case "design":
+  //           showStates.design();
 
-            setSelectedProject([
-              "",
-              "",
-              "projects_selected",
-              "",
-            ]);
-            break;
-          case "mobile":
-            showStates.mobile();
+  //           setSelectedProject([
+  //             "",
+  //             "",
+  //             "projects_selected",
+  //             "",
+  //           ]);
+  //           break;
+  //         case "mobile":
+  //           showStates.mobile();
 
-            setSelectedProject([
-              "",
-              "",
-              "",
-              "projects_selected",
-            ]);
-            break;
-          case "none":
-            showStates.none();
-            break;
-      }
-  };
+  //           setSelectedProject([
+  //             "",
+  //             "",
+  //             "",
+  //             "projects_selected",
+  //           ]);
+  //           break;
+  //         case "none":
+  //           showStates.none();
+  //           break;
+  //     }
+  // };
 
   //App.js Handlers
   const pageHandler = (motion, toPage) => {
@@ -195,9 +196,9 @@ const App = () => {
     //Reset project animations
     if (motion === "home" || motion === "blogs" || motion === "contact") {
       setTimeout(() => {
-        projectCategoryClickHandler("none");
-        Animations.fadeFromBottom.onAnim(projectHeader);
-        Animations.fadeFromBottom.onAnim(projectUl);
+        // projectCategoryClickHandler("none");
+        // Animations.fadeFromBottom.onAnim(projectHeader);
+        // Animations.fadeFromBottom.onAnim(projectUl);
         setSelectedProject([
           "projects_selected",
           "",
@@ -265,13 +266,13 @@ const App = () => {
         "",
       ]);
 
-      setTimeout(() => {
-        Animations.fadeFromBottom.init(projectHeader);
-      }, 400);
+      // setTimeout(() => {
+      //   Animations.fadeFromBottom.init(projectHeader);
+      // }, 400);
 
-      setTimeout(() => {
-        Animations.fadeFromBottom.init(projectUl);
-      }, 500);
+      // setTimeout(() => {
+      //   Animations.fadeFromBottom.init(projectUl);
+      // }, 500);
 
     } else if (motion === "contact") {
 
@@ -306,11 +307,11 @@ const App = () => {
       }, 1500);
     }
 
-    if (toPage === "projects") {
-      setTimeout(() => {
-        projectCategoryClickHandler("all");
-      }, 600);
-    }
+    // if (toPage === "projects") {
+    //   setTimeout(() => {
+    //     projectCategoryClickHandler("all");
+    //   }, 600);
+    // }
   }
 
   const navHandler = () => {
@@ -367,7 +368,7 @@ const App = () => {
 
   return (
     <div>
-      <Splash />
+      {/* <Splash /> */}
 
       <div className="hover_nav_container">
         <div onClick={pageHandler.bind(this, "home")} className={`circle-icon ${hoverNav[0]}`}></div>
@@ -397,9 +398,13 @@ const App = () => {
       </div>
       
       <div style={{ zIndex: 1 }} className={`section_container ${transition[2]}`} id="project">
-        <Project 
+        {/* <Project 
           selected={selectedProject}
           projectCategoryClickHandler={projectCategoryClickHandler}
+          nextOnClick={pageHandler.bind(this, "contact")}
+          prev={pageHandler.bind(this, "blogs", "blogs")}
+        /> */}
+        <Work 
           nextOnClick={pageHandler.bind(this, "contact")}
           prev={pageHandler.bind(this, "blogs", "blogs")}
         />
