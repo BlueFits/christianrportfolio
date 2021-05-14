@@ -123,7 +123,7 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                         love for programming.
                     </p>
 
-                    <img className="profile_photo" src="https://i.imgur.com/I4dMFbH.jpg" alt="me_with_guitar"/>
+                    <img className="profile_photo" src="https://i.imgur.com/0KsBXiN.jpg" alt="me_posing"/>
 
                     <p id="center_text_body1_id" style={{ ...styles.transitionStyle }}>
                         Fast-forward to today, I am able to 
