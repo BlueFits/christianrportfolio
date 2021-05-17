@@ -626,6 +626,11 @@ header {
     margin-bottom: 8px;
 }
 
+.experience_content_header_sentence > a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .experience_contents_info {
     margin-top: 30px;
 }
@@ -636,6 +641,17 @@ header {
 
 #experience_contents_description > li:last-of-type {
     margin-bottom: 0;
+}
+
+.company_link {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+    border-bottom: 3px solid transparent;
+}
+
+.company_link:hover {
+    border-color: #fff;
 }
 
 #experience_contents_description > li {

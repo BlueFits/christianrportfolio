@@ -149,7 +149,7 @@ const Work = ({ nextOnClick, prev }) => {
 
                     <div className="experience_contents">
                         <div id="experience_contents_header">
-                            <h2>{company.header}</h2>
+                            <h2>{company.header} <a className="company_link" target="_blank" href={company.website.link}>{company.name}</a></h2>
                             <p>{company.date}</p>
                         </div>
 
@@ -217,7 +217,11 @@ const Work = ({ nextOnClick, prev }) => {
 
 const experience = {
     hangry: {
-        header : "Lead Software Engineer @ Hangry",
+        name: "Hangry",
+        header : "Lead Software Engineer @",
+        website: {
+            link: "https://www.getqrunch.com/"
+        },
         date: "Aug 2020 - Feb 2021",
         jobDesc: [
             "My task in the front-end involved designing the application interface and implementing a successful front-end structure using React-Native, Redux and Redux-Thunk",
@@ -226,7 +230,11 @@ const experience = {
         ],
     },
     bbtease : {
-        header: "Freelance Web Developer and Designer @ Bbtease",
+        name: "Bbtease",
+        header: "Freelance Web Developer and Designer @",
+        website: {
+            link: "https://bbtease.com/"
+        },
         date: "Oct 2020 – Nov 2020",
         jobDesc: [
             "Designed the front-end for the website using Adobe XD",
