@@ -9,6 +9,49 @@ import SmallHeader from "../components/SmallHeader";
 
 import Animations from "../effects/Animations";
 
+const experience = {
+    coxAuto: {
+        name: "Cox Automotive",
+        header : "Full Stack Developer @",
+        website: {
+            link: "https://www.coxautoinc.com/"
+        },
+        date: "June 2021 - Present",
+        jobDesc: [
+            "Worked on the mobile app for the manheim branch taking care of back end apis and the front end.",
+            "Used TypeScript and React Native to develop the mobile application.",
+            "Using Next.js I've worked on the back end api for both the webite app and the mobile app.",
+        ],
+    },
+    hangry: {
+        name: "Hangry",
+        header : "Lead Software Engineer @",
+        website: {
+            link: "https://www.getqrunch.com/"
+        },
+        date: "Aug 2020 - Feb 2021",
+        jobDesc: [
+            "My task in the front-end involved designing the application interface and implementing a successful front-end structure using React-Native, Redux and Redux-Thunk",
+            "While in the back-end I worked on the API calls and made sure that the app used a Restful architecture",
+            "Interviewed multiple clients and lead the team to decide on which core features to build on the application",
+        ],
+    },
+    bbtease : {
+        name: "Bbtease",
+        header: "Freelance Web Developer and Designer @",
+        website: {
+            link: "https://bbtease.com/"
+        },
+        date: "Oct 2020 – Nov 2020",
+        jobDesc: [
+            "Designed the front-end for the website using Adobe XD",
+            "Developed the website to be responsive across all platforms using the React Framework",
+            "Built custom animations using a combination of react packages, vanilla javascript and CSS",
+            "Used NodeJS with express to program a backend that is capable of measuring traffic and handling email using Nodemailer",
+        ],
+    }
+};
+
 const Work = ({ nextOnClick, prev }) => {
 
     useEffect(() => ScrollPageEvent("project", nextOnClick, prev), [ScrollPageEvent]);
@@ -16,9 +59,10 @@ const Work = ({ nextOnClick, prev }) => {
     const [experienceMenu, setExperienceMenu] = useState([
         "experience_selected", 
         "",
+        "",
     ]);
-    const [company, setCompany] = useState(experience.hangry);
-    const [currentVal, setCurrentVal] = useState("hangry");
+    const [company, setCompany] = useState(experience.coxAuto);
+    const [currentVal, setCurrentVal] = useState("coxAuto");
 
     //Components
     const WorkHeader = ({ topText, textA, textB }) => {
@@ -101,11 +145,24 @@ const Work = ({ nextOnClick, prev }) => {
         }
 
         switch (title) {
+            case "coxAuto":
+                if (currentVal === "coxAuto") {
+                    break
+                }
+                setExperienceMenu([
+                    "experience_selected",
+                    "",
+                    "",
+                ]);
+                animate(experience.coxAuto);
+                setCurrentVal("coxAuto");
+                break;
             case "hangry":
                 if (currentVal === "hangry") {
                     break;
                 }
                 setExperienceMenu([
+                    "",
                     "experience_selected",
                     "",
                 ]);
@@ -118,6 +175,7 @@ const Work = ({ nextOnClick, prev }) => {
                     break;
                 }
                 setExperienceMenu([
+                    "",
                     "",
                     "experience_selected",
                 ]);
@@ -143,8 +201,9 @@ const Work = ({ nextOnClick, prev }) => {
 
                 <div className="experience_container">
                     <ul className="experience_selection">
-                        <li onClick={experienceHandler.bind(this, "hangry")} className={`experience_menu ${experienceMenu[0]}`}><strong className="experience_header">Hangry</strong></li>
-                        <li onClick={experienceHandler.bind(this, "bbtease")} className={`experience_menu ${experienceMenu[1]}`}><strong className="experience_header">Bbtease</strong></li>
+                        <li onClick={experienceHandler.bind(this, "coxAuto")} className={`experience_menu ${experienceMenu[0]}`}><strong className="experience_header">Cox Automotive</strong></li>
+                        <li onClick={experienceHandler.bind(this, "hangry")} className={`experience_menu ${experienceMenu[1]}`}><strong className="experience_header">Hangry</strong></li>
+                        <li onClick={experienceHandler.bind(this, "bbtease")} className={`experience_menu ${experienceMenu[2]}`}><strong className="experience_header">Bbtease</strong></li>
                     </ul>
 
                     <div className="experience_contents">
@@ -213,36 +272,6 @@ const Work = ({ nextOnClick, prev }) => {
             </section>
         </div>
     );
-};
-
-const experience = {
-    hangry: {
-        name: "Hangry",
-        header : "Lead Software Engineer @",
-        website: {
-            link: "https://www.getqrunch.com/"
-        },
-        date: "Aug 2020 - Feb 2021",
-        jobDesc: [
-            "My task in the front-end involved designing the application interface and implementing a successful front-end structure using React-Native, Redux and Redux-Thunk",
-            "While in the back-end I worked on the API calls and made sure that the app used a Restful architecture",
-            "Interviewed multiple clients and lead the team to decide on which core features to build on the application",
-        ],
-    },
-    bbtease : {
-        name: "Bbtease",
-        header: "Freelance Web Developer and Designer @",
-        website: {
-            link: "https://bbtease.com/"
-        },
-        date: "Oct 2020 – Nov 2020",
-        jobDesc: [
-            "Designed the front-end for the website using Adobe XD",
-            "Developed the website to be responsive across all platforms using the React Framework",
-            "Built custom animations using a combination of react packages, vanilla javascript and CSS",
-            "Used NodeJS with express to program a backend that is capable of measuring traffic and handling email using Nodemailer",
-        ],
-    }
 };
 
 export default Work;
