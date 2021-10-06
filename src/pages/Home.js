@@ -108,7 +108,7 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                             <div className="about_cta" onClick={() => openProject()}>
                                 <p>PROJECTS</p>
                             </div>
-                            <div className="about_cta" onClick={() => window.open("https://drive.google.com/file/d/1sPkenzicG5SeTztVDsiDcgtn5Ykqkfx4/view?usp=sharing", '_blank').focus()}>
+                            <div className="about_cta" onClick={() => window.open("https://drive.google.com/file/d/1ihJSgCv4ihqp8QHMzTKbltb8-YVdC5-g/view?usp=sharing", '_blank').focus()}>
                                 <p>DOWNLOAD CV</p>
                             </div>
                         </div>
