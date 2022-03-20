@@ -1231,7 +1231,7 @@ footer {
     .experience_selection {
         display: flex;
         justify-content: center;
-
+        overflow-x: scroll;
     }
     .experience_menu {
         border-bottom: 4px solid var(--darkerblue);

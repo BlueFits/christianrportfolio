@@ -10,13 +10,24 @@ import SmallHeader from "../components/SmallHeader";
 import Animations from "../effects/Animations";
 
 const experience = {
+    bmo: {
+        name: "BMO",
+        header : "Web Application Developer @",
+        website: {
+            link: "https://www.bmo.com"
+        },
+        date: "March 2022 - Present",
+        jobDesc: [
+            "Inbound to work at BMO at March 28th",
+        ],
+    },
     coxAuto: {
         name: "Cox Automotive",
         header : "Full Stack Developer @",
         website: {
             link: "https://www.coxautoinc.com/"
         },
-        date: "June 2021 - Present",
+        date: "June 2021 - December 2021",
         jobDesc: [
             "Worked on the mobile app for the manheim branch taking care of back end apis and the front end.",
             "Used TypeScript and React Native to develop the mobile application.",
@@ -60,9 +71,10 @@ const Work = ({ nextOnClick, prev }) => {
         "experience_selected", 
         "",
         "",
+        "",
     ]);
-    const [company, setCompany] = useState(experience.coxAuto);
-    const [currentVal, setCurrentVal] = useState("coxAuto");
+    const [company, setCompany] = useState(experience.bmo);
+    const [currentVal, setCurrentVal] = useState("bmo");
 
     //Components
     const WorkHeader = ({ topText, textA, textB }) => {
@@ -145,11 +157,25 @@ const Work = ({ nextOnClick, prev }) => {
         }
 
         switch (title) {
+            case "bmo":
+                if (currentVal === "bmo") {
+                    break
+                }
+                setExperienceMenu([
+                    "experience_selected",
+                    "",
+                    "",
+                    "",
+                ]);
+                animate(experience.bmo);
+                setCurrentVal("bmo");
+                break;
             case "coxAuto":
                 if (currentVal === "coxAuto") {
                     break
                 }
                 setExperienceMenu([
+                    "",
                     "experience_selected",
                     "",
                     "",
@@ -163,6 +189,7 @@ const Work = ({ nextOnClick, prev }) => {
                 }
                 setExperienceMenu([
                     "",
+                    "",
                     "experience_selected",
                     "",
                 ]);
@@ -175,6 +202,7 @@ const Work = ({ nextOnClick, prev }) => {
                     break;
                 }
                 setExperienceMenu([
+                    "",
                     "",
                     "",
                     "experience_selected",
@@ -201,9 +229,10 @@ const Work = ({ nextOnClick, prev }) => {
 
                 <div className="experience_container">
                     <ul className="experience_selection">
-                        <li onClick={experienceHandler.bind(this, "coxAuto")} className={`experience_menu ${experienceMenu[0]}`}><strong className="experience_header">Cox Automotive</strong></li>
-                        <li onClick={experienceHandler.bind(this, "hangry")} className={`experience_menu ${experienceMenu[1]}`}><strong className="experience_header">Hangry</strong></li>
-                        <li onClick={experienceHandler.bind(this, "bbtease")} className={`experience_menu ${experienceMenu[2]}`}><strong className="experience_header">Bbtease</strong></li>
+                        <li onClick={experienceHandler.bind(this, "bmo")} className={`experience_menu ${experienceMenu[0]}`}><strong className="experience_header">BMO</strong></li>
+                        <li onClick={experienceHandler.bind(this, "coxAuto")} className={`experience_menu ${experienceMenu[1]}`}><strong className="experience_header">Cox</strong></li>
+                        <li onClick={experienceHandler.bind(this, "hangry")} className={`experience_menu ${experienceMenu[2]}`}><strong className="experience_header">Hangry</strong></li>
+                        <li onClick={experienceHandler.bind(this, "bbtease")} className={`experience_menu ${experienceMenu[3]}`}><strong className="experience_header">Bbtease</strong></li>
                     </ul>
 
                     <div className="experience_contents">
