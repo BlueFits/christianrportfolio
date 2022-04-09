@@ -18,7 +18,7 @@ const experience = {
         },
         date: "March 2022 - Present",
         jobDesc: [
-            "Inbound to work at BMO at March 28th",
+            "Developed BMO website pages for split testing using Adobe Target, in combination with HTML/CSS/Javascript and Jquery resulting in a a more responsive and better overall user website experience.",
         ],
     },
     coxAuto: {
@@ -29,9 +29,11 @@ const experience = {
         },
         date: "June 2021 - December 2021",
         jobDesc: [
-            "Worked on the mobile app for the manheim branch taking care of back end apis and the front end.",
-            "Used TypeScript and React Native to develop the mobile application.",
-            "Using Next.js I've worked on the back end api for both the webite app and the mobile app.",
+            "Programmed front-end client (BMW) mobile application from scratch, working with technologies like React-Native, Redux-Toolkit, AWS, Auth0, and more.",
+            "Worked on both back-end and front-end of the MUVIT web app, using NextJS  to combine server side rendering and client side rendering to achieve optimal website load times for users.",
+            "Used NodeJS, Express and Mongo to develop and manage databases, as well as design REST APIs.",
+            "Helped implement and write internal private package to be used across company teams.",
+            "Reviewed code, debugged problems and corrected issues."
         ],
     },
     hangry: {
@@ -42,25 +44,26 @@ const experience = {
         },
         date: "Aug 2020 - Feb 2021",
         jobDesc: [
-            "My task in the front-end involved designing the application interface and implementing a successful front-end structure using React-Native, Redux and Redux-Thunk",
-            "While in the back-end I worked on the API calls and made sure that the app used a Restful architecture",
-            "Interviewed multiple clients and lead the team to decide on which core features to build on the application",
+            "Developed Hangry mobile application using React-Native and Redux-toolkit from scratch with a NodeJS backend to handle routes, traffic tracking, and authentication.",
+            "Designed and Developed a responsive website across all platforms for client (BBTease) company website using Adobe XD and ReactJS.",
+            "Built custom animations using a combination of react packages, vanilla javascript, and CSS.",
+            "Used NodeJS with express to program a backend that measured traffic and email handling using Nodemailer.",
         ],
     },
-    bbtease : {
-        name: "Bbtease",
-        header: "Freelance Web Developer and Designer @",
-        website: {
-            link: "https://bbtease.com/"
-        },
-        date: "Oct 2020 – Nov 2020",
-        jobDesc: [
-            "Designed the front-end for the website using Adobe XD",
-            "Developed the website to be responsive across all platforms using the React Framework",
-            "Built custom animations using a combination of react packages, vanilla javascript and CSS",
-            "Used NodeJS with express to program a backend that is capable of measuring traffic and handling email using Nodemailer",
-        ],
-    }
+    // bbtease : {
+    //     name: "Bbtease",
+    //     header: "Freelance Web Developer and Designer @",
+    //     website: {
+    //         link: "https://bbtease.com/"
+    //     },
+    //     date: "Oct 2020 – Nov 2020",
+    //     jobDesc: [
+    //         "Designed the front-end for the website using Adobe XD",
+    //         "Developed the website to be responsive across all platforms using the React Framework",
+    //         "Built custom animations using a combination of react packages, vanilla javascript and CSS",
+    //         "Used NodeJS with express to program a backend that is capable of measuring traffic and handling email using Nodemailer",
+    //     ],
+    // }
 };
 
 const Work = ({ nextOnClick, prev }) => {
@@ -69,7 +72,6 @@ const Work = ({ nextOnClick, prev }) => {
 
     const [experienceMenu, setExperienceMenu] = useState([
         "experience_selected", 
-        "",
         "",
         "",
     ]);
@@ -165,7 +167,6 @@ const Work = ({ nextOnClick, prev }) => {
                     "experience_selected",
                     "",
                     "",
-                    "",
                 ]);
                 animate(experience.bmo);
                 setCurrentVal("bmo");
@@ -177,7 +178,6 @@ const Work = ({ nextOnClick, prev }) => {
                 setExperienceMenu([
                     "",
                     "experience_selected",
-                    "",
                     "",
                 ]);
                 animate(experience.coxAuto);
@@ -191,25 +191,24 @@ const Work = ({ nextOnClick, prev }) => {
                     "",
                     "",
                     "experience_selected",
-                    "",
                 ]);
                 animate(experience.hangry);
                 setCurrentVal("hangry");
 
                 break;
-            case "bbtease":
-                if (currentVal === "bbtease") {
-                    break;
-                }
-                setExperienceMenu([
-                    "",
-                    "",
-                    "",
-                    "experience_selected",
-                ]);
-                animate(experience.bbtease);
-                setCurrentVal("bbtease");
-                break;
+            // case "bbtease":
+            //     if (currentVal === "bbtease") {
+            //         break;
+            //     }
+            //     setExperienceMenu([
+            //         "",
+            //         "",
+            //         "",
+            //         "experience_selected",
+            //     ]);
+            //     animate(experience.bbtease);
+            //     setCurrentVal("bbtease");
+            //     break;
         }
     };
 
@@ -232,7 +231,7 @@ const Work = ({ nextOnClick, prev }) => {
                         <li onClick={experienceHandler.bind(this, "bmo")} className={`experience_menu ${experienceMenu[0]}`}><strong className="experience_header">BMO</strong></li>
                         <li onClick={experienceHandler.bind(this, "coxAuto")} className={`experience_menu ${experienceMenu[1]}`}><strong className="experience_header">Cox</strong></li>
                         <li onClick={experienceHandler.bind(this, "hangry")} className={`experience_menu ${experienceMenu[2]}`}><strong className="experience_header">Hangry</strong></li>
-                        <li onClick={experienceHandler.bind(this, "bbtease")} className={`experience_menu ${experienceMenu[3]}`}><strong className="experience_header">Bbtease</strong></li>
+                        {/* <li onClick={experienceHandler.bind(this, "bbtease")} className={`experience_menu ${experienceMenu[3]}`}><strong className="experience_header">Bbtease</strong></li> */}
                     </ul>
 
                     <div className="experience_contents">
@@ -285,16 +284,15 @@ const Work = ({ nextOnClick, prev }) => {
                         />
 
                         <ProjectLi
-                            src={"https://drive.google.com/uc?export=download&id=1Ze3nzbgZij6D7aMyrAQh6c8GJSkPs_-4"}
-                            title={"Qrunch"}
-                            subTitle={"Mobile App"}
+                            src={"https://drive.google.com/uc?export=download&id=1QbtqCRk4az7mnkf9A-3aP-v4jfqvk12j"}
+                            title={"TheGamerStory"}
+                            subTitle={"Web App"}
                             desc={
-                                `Developed the hangry mobile app. Scan a qr to open a custom restaurant menu where
-                                you can order instantly.`
+                                `A gaming blogging website to share gaming experiences with each other.`
                             }
-                            tech={["React.js", "Redux", "Thunk", "Node.Js", "MongoDB"]}
-                            git={"https://github.com/BlueFits/hangryMobile2"}
-                            website={"https://play.google.com/store/apps/details?id=com.hangrygroup.qrunch"}
+                            tech={["NextJS", "Redux-Toolkit", "Material-UI", "Node.Js", "Tailwind-CSS"]}
+                            git={"https://github.com/BlueFits/qa-thegamerstory"}
+                            website={"https://qa-thegamerstory.herokuapp.com/"}
                         />
                     </ul>
                 </div>

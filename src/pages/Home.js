@@ -108,7 +108,7 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                             <div className="about_cta" onClick={() => openProject()}>
                                 <p>PROJECTS</p>
                             </div>
-                            <div className="about_cta" onClick={() => window.open("https://drive.google.com/file/d/1lhaUbQPcOphatpbLEiQul6JsaJOWe61H/view?usp=sharing", '_blank').focus()}>
+                            <div className="about_cta" onClick={() => window.open("https://resume.creddle.io/resume/3fbeoy5muom", '_blank').focus()}>
                                 <p>DOWNLOAD CV</p>
                             </div>
                         </div>
