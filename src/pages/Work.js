@@ -18,7 +18,9 @@ const experience = {
         },
         date: "March 2022 - Present",
         jobDesc: [
-            "Developed BMO website pages for split testing using Adobe Target, in combination with HTML/CSS/Javascript and Jquery resulting in a a more responsive and better overall user website experience.",
+            "Architected and built a CLI tool with NodeJS and Webpack, which allowed React and Typescript to be the standard for development, streamlining the team’s coding process",
+            "Designed and developed the team's component library using Webpack, React, and Typescript building prebuilt React components that are ready for use in production right out of the box",
+            "Built an Electron application that tracks the team's personalized web experiences to help product owners better maintain their campaigns",
         ],
     },
     coxAuto: {
@@ -32,8 +34,6 @@ const experience = {
             "Programmed front-end client (BMW) mobile application from scratch, working with technologies like React-Native, Redux-Toolkit, AWS, Auth0, and more.",
             "Worked on both back-end and front-end of the MUVIT web app, using NextJS  to combine server side rendering and client side rendering to achieve optimal website load times for users.",
             "Used NodeJS, Express and Mongo to develop and manage databases, as well as design REST APIs.",
-            "Helped implement and write internal private package to be used across company teams.",
-            "Reviewed code, debugged problems and corrected issues."
         ],
     },
     hangry: {
@@ -256,7 +256,7 @@ const Work = ({ nextOnClick, prev }) => {
                     />
 
                     <ul className="project_ul_container">
-                        <ProjectLi
+                        {/* <ProjectLi
                             src={"https://drive.google.com/uc?export=download&id=1PC9TPC2PJwvUNQs4rDChHrMLOX1XbMwL"}
                             title={"Bbtease"}
                             subTitle={"Web Development"}
@@ -267,6 +267,18 @@ const Work = ({ nextOnClick, prev }) => {
                             tech={["React.js", "Node.js"]}
                             git={"https://github.com/BlueFits/bbtease"}
                             website={"https://bbtease.com/"}
+                        /> */}
+
+                        <ProjectLi
+                            src={"https://lh3.googleusercontent.com/drive-viewer/AFGJ81pMEcEGIGG1T4d55fXtFuwr3JZtsIfzrGVUMk5qeB7X6K7wB5WapXyOvXUBxPhkmHnkQZKPIZTzFMHccqQF8zqUtJOUgg=s1600"}
+                            title={"Reveal"}
+                            subTitle={"Mobile App and Website"}
+                            desc={
+                                `An Omegle like platform with a dating twist. This project was built on NextJS with a custom server utilizing technologies like Auth0, Socket.IO, etc.`
+                            }
+                            tech={["Next.js", "Express.js", "Docker", "Socket.IO", "Material-UI", "Redux-Toolkit", "React-Native"]}
+                            git={"https://github.com/BlueFits/reveal_web_app"}
+                            website={"https://reveal-app.co/"}
                         />
 
                         <ProjectLi

@@ -372,7 +372,7 @@ const App = () => {
 
       <div className="hover_nav_container">
         <div onClick={pageHandler.bind(this, "home")} className={`circle-icon ${hoverNav[0]}`}></div>
-        <div onClick={pageHandler.bind(this, "blogs", "blogs")} className={`circle-icon ${hoverNav[1]}`}></div>
+        {/* <div onClick={pageHandler.bind(this, "blogs", "blogs")} className={`circle-icon ${hoverNav[1]}`}></div> */}
         <div onClick={pageHandler.bind(this, "projects", "projects")} className={`circle-icon ${hoverNav[2]}`}></div>
         <div onClick={pageHandler.bind(this, "contact")} className={`circle-icon ${hoverNav[3]}`}></div>
       </div>
@@ -385,17 +385,17 @@ const App = () => {
       />
 
       <div style={{ zIndex: 3 }} className={`section_container ${transition[0]}`} id="home">
-        <Home navHandler={navHandler} nextOnClick={pageHandler.bind(this, "blogs", "blogs")} openProject={pageHandler.bind(this, "projects", "projects")}/>
+        <Home navHandler={navHandler} nextOnClick={pageHandler.bind(this, "projects", "projects")} openProject={pageHandler.bind(this, "projects", "projects")}/>
       </div>
 
-      <div style={{ zIndex: 2 }} className={`section_container ${transition[1]}`} id="blogs">
+      {/* <div style={{ zIndex: 2 }} className={`section_container ${transition[1]}`} id="blogs">
         <Blogs 
           blogState={ blogState }
           nextOnClick={pageHandler.bind(this, "projects", "projects")}
           prev={pageHandler.bind(this, "home")}
           blogNextHidden={blogNextHidden}
         />
-      </div>
+      </div> */}
       
       <div style={{ zIndex: 1 }} className={`section_container ${transition[2]}`} id="project">
         {/* <Project 
@@ -406,7 +406,7 @@ const App = () => {
         /> */}
         <Work 
           nextOnClick={pageHandler.bind(this, "contact")}
-          prev={pageHandler.bind(this, "blogs", "blogs")}
+          prev={pageHandler.bind(this, "home", "home")}
         />
       </div>
       

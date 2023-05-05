@@ -137,7 +137,7 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                     {/* <p id="center_text_conclusion_id" style={styles.transitionStyle}>For a complete summary of all my skills refer to my portfolio.</p> */}
                     <ul className="tech_ul_style" id="center_text_conclusion_id" style={styles.transitionStyle}>
                         <div>
-                            <li>JavaScript (ES6+)</li>
+                            <li>TypeScript</li>
                             <li>Node.js</li>
                             <li>React</li>
                         </div>

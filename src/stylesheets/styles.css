@@ -738,6 +738,7 @@ header {
 
 .newProject_tech {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .newProject_tech > p {

@@ -53,14 +53,14 @@ const NavMenu = ({ onClick, navStatus, textStatus, navClick }) => {
                                 },500);
                             }}
                         ><span className={`nav_menu_options ${textStatus[0]}`}><h1>About</h1></span></li>
-                        <li
+                        {/* <li
                             onClick={() => {
                                 onClick();
                                 setTimeout(() => {
                                     navClick("blogs", "blogs");
                                 },500);
                             }}
-                        ><span className={`nav_menu_options ${textStatus[1]}`}><h1>Blogs</h1></span></li>
+                        ><span className={`nav_menu_options ${textStatus[1]}`}><h1>Blogs</h1></span></li> */}
                         <li
                             onClick={() => {
                                 onClick();
