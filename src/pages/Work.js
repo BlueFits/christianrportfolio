@@ -270,7 +270,7 @@ const Work = ({ nextOnClick, prev }) => {
                         /> */}
 
                         <ProjectLi
-                            src={"https://lh3.googleusercontent.com/drive-viewer/AFGJ81pMEcEGIGG1T4d55fXtFuwr3JZtsIfzrGVUMk5qeB7X6K7wB5WapXyOvXUBxPhkmHnkQZKPIZTzFMHccqQF8zqUtJOUgg=s1600"}
+                            src={"https://lh3.googleusercontent.com/drive-viewer/AFGJ81p5FTurbvYlQXhYeTDBCtUC0VA15lgj0FpSEwFPgc4vOzzQtmkoAt5S2oH1CH18mph_U1WrSlCt28lXSQUtJ_tUeS24Ww=s1600"}
                             title={"Reveal"}
                             subTitle={"Mobile App and Website"}
                             desc={
