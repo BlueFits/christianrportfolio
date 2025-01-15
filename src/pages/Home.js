@@ -99,9 +99,8 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                         </div>
                         <div className="header_description text_secondary">
                             <p style={{ lineHeight: "1.6rem" }}>
-                                I'm a Toronto-based software engineer with almost 4 years of professional experience,
-                                I specialize in building efficient, scalable, and innovative solutions using modern technologies.
-                                My expertise spans full-stack development, React ecosystems, and cloud-native applications.
+                                I'm a Toronto-based software engineer with nearly 4 years of experience, specializing in
+                                scalable full-stack solutions, React ecosystems, and cloud-native applications.
                             </p>
                         </div>
                         <div className="header_buttons_container">
@@ -148,10 +147,10 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                 </div>
             </div>
 
-            <div id="home_nextTab_Id" className="home_nextTab_container">
+            <div id="home_nextTab_Id" className="home_nextTab_container" style={{ position: "relative", top: "15px" }}>
                 <NextTab
-                    text="Scroll To Next Page"
-                    // color={Colors.secondary}
+                    text="Click to Next Page"
+                    color={Colors.secondary}
                     textColor="#fff"
                     onClick={nextOnClick}
                 />

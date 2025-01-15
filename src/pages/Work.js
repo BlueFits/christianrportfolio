@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { FiGithub } from "react-icons/fi";
 import { IoMdOpen } from "react-icons/io";
 import { isBrowser } from "react-device-detect";
+import NextTab from "../components/NextTab";
+import Colors from "../constants/Colors";
 
 import ScrollPageEvent from "../effects/ScrollPageEvent";
 
@@ -12,7 +14,7 @@ import Animations from "../effects/Animations";
 const experience = {
     bmo: {
         name: "BMO",
-        header : "Web Application Developer @",
+        header: "Web Application Developer @",
         website: {
             link: "https://www.bmo.com"
         },
@@ -25,7 +27,7 @@ const experience = {
     },
     coxAuto: {
         name: "Cox Automotive",
-        header : "Full Stack Developer @",
+        header: "Full Stack Developer @",
         website: {
             link: "https://www.coxautoinc.com/"
         },
@@ -38,7 +40,7 @@ const experience = {
     },
     hangry: {
         name: "Hangry",
-        header : "Lead Software Engineer @",
+        header: "Lead Software Engineer @",
         website: {
             link: "https://www.getqrunch.com/"
         },
@@ -71,7 +73,7 @@ const Work = ({ nextOnClick, prev }) => {
     useEffect(() => ScrollPageEvent("project", nextOnClick, prev), [ScrollPageEvent]);
 
     const [experienceMenu, setExperienceMenu] = useState([
-        "experience_selected", 
+        "experience_selected",
         "",
         "",
     ]);
@@ -82,10 +84,10 @@ const Work = ({ nextOnClick, prev }) => {
     const WorkHeader = ({ topText, textA, textB }) => {
         return (
             <div className="work_header">
-                <SmallHeader text={topText}/>
+                <SmallHeader text={topText} />
                 <h1>
                     <span style={{ color: "#fff" }}>{textA}</span>
-                    <br/> 
+                    <br />
                     {textB}
                 </h1>
             </div>
@@ -98,16 +100,16 @@ const Work = ({ nextOnClick, prev }) => {
 
         return (
             <li className={`project_li ${reverse ? "project_li_reverse" : ""}`}>
-                <div 
+                <div
                     className="project_preview"
                     onClick={() => {
                         window.open(website, '_blank').focus();
                     }}
                 >
-                    <img src={src} style={{ height: "100%" }}/>
+                    <img src={src} style={{ height: "100%" }} />
                 </div>
 
-                <div style={ isBrowser ? browserStyle : {}} className={`project_info`}>
+                <div style={isBrowser ? browserStyle : {}} className={`project_info`}>
                     <div>
                         <h2 className="newProject_header">{title}</h2>
                         <span className="newProject_subHeader"><strong>{subTitle}</strong></span>
@@ -120,10 +122,10 @@ const Work = ({ nextOnClick, prev }) => {
                     <div className="newProject_tech">
                         {tech.map(val => <p>{val}</p>)}
                     </div>
-                    
+
                     <div>
-                        <FiGithub 
-                            className="newProject_link" 
+                        <FiGithub
+                            className="newProject_link"
                             size={24}
                             onClick={() => {
                                 window.open(git, '_blank').focus();
@@ -213,18 +215,18 @@ const Work = ({ nextOnClick, prev }) => {
     };
 
 
-    return(
+    return (
         <div>
             <section className="projects_section">
 
                 <div style={{ height: 80, }} />
 
-                <WorkHeader 
+                <WorkHeader
                     topText={"Experience"}
                     textA={"Take A Look"}
                     textB={"Where I've Worked"}
                 />
-                
+
 
                 <div className="experience_container">
                     <ul className="experience_selection">
@@ -249,7 +251,7 @@ const Work = ({ nextOnClick, prev }) => {
                 </div>
 
                 <div className="project_wrapper">
-                    <WorkHeader 
+                    <WorkHeader
                         topText={"Projects"}
                         textA={"Some Things"}
                         textB={"That I Have Built"}
@@ -308,8 +310,18 @@ const Work = ({ nextOnClick, prev }) => {
                         />
                     </ul>
                 </div>
-            </section>
-        </div>
+
+
+                <div style={{ position: "relative", bottom: "15px", color: "#fff" }}>
+                    <NextTab
+                        text="Click to Next Page"
+                        color={Colors.secondary}
+                        textColor="#fff"
+                        onClick={nextOnClick}
+                    />
+                </div>
+            </section >
+        </div >
     );
 };
 
