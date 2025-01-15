@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/christianrportfolio/static/css/main.47ec00ed.chunk.css",
+    "main.js": "/christianrportfolio/static/js/main.2f056940.chunk.js",
+    "main.js.map": "/christianrportfolio/static/js/main.2f056940.chunk.js.map",
+    "runtime-main.js": "/christianrportfolio/static/js/runtime-main.eaa606e0.js",
+    "runtime-main.js.map": "/christianrportfolio/static/js/runtime-main.eaa606e0.js.map",
+    "static/js/2.9d15176d.chunk.js": "/christianrportfolio/static/js/2.9d15176d.chunk.js",
+    "static/js/2.9d15176d.chunk.js.map": "/christianrportfolio/static/js/2.9d15176d.chunk.js.map",
+    "index.html": "/christianrportfolio/index.html",
+    "static/css/main.47ec00ed.chunk.css.map": "/christianrportfolio/static/css/main.47ec00ed.chunk.css.map",
+    "static/js/2.9d15176d.chunk.js.LICENSE.txt": "/christianrportfolio/static/js/2.9d15176d.chunk.js.LICENSE.txt",
+    "static/media/Cog.1b08f13a.svg": "/christianrportfolio/static/media/Cog.1b08f13a.svg",
+    "static/media/CompSci.2edf883f.svg": "/christianrportfolio/static/media/CompSci.2edf883f.svg",
+    "static/media/styles.css": "/christianrportfolio/static/media/blueTransitional.14cd9b60.svg",
+    "static/media/sample.a88b87d2.JPG": "/christianrportfolio/static/media/sample.a88b87d2.JPG"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.eaa606e0.js",
+    "static/js/2.9d15176d.chunk.js",
+    "static/css/main.47ec00ed.chunk.css",
+    "static/js/main.2f056940.chunk.js"
+  ]
+}
