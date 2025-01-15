@@ -44,7 +44,7 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
             } else {
                 Animations.fadeAndScale.onAnim(centerTop);
             }
-            
+
             if (offset >= 1350) {
                 Animations.fadeAndScale.init(centerBody1);
             } else {
@@ -64,7 +64,7 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                 Animations.fadeAndScale.onAnim(centerConclusion);
             }
         };
-        
+
         homeElement.addEventListener("scroll", handleScroll);
 
         return () => {
@@ -78,11 +78,11 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                 <ul className="nav_li_container">
                     <li><AnchorLink className="anchorLink_style" herf="#">Christian Rojas</AnchorLink></li>
                     <li><a className="link_styles" target="_blank" rel="noreferrer" href="https://www.facebook.com/profile.php?id=100047736457748">Facebook</a></li>
-                    <li><a className="link_styles"  target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/christian-rojas-16194a186">LinkedIn</a></li>
-                    <li><a className="link_styles"  target="_blank" rel="noreferrer" href="https://github.com/BlueFits">Github</a></li>
+                    <li><a className="link_styles" target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/christian-rojas-16194a186">LinkedIn</a></li>
+                    <li><a className="link_styles" target="_blank" rel="noreferrer" href="https://github.com/BlueFits">Github</a></li>
                 </ul>
                 <div onClick={navHandler} unselectable="on" className="nav_button_container">
-                    <HiMenuAlt4 size={35} className="nav_button"/>
+                    <HiMenuAlt4 size={35} className="nav_button" />
                 </div>
             </nav>
             <header>
@@ -98,10 +98,10 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                             <h1 className="text_secondary">I am a software engineer.</h1>
                         </div>
                         <div className="header_description text_secondary">
-                            <p>
-                                I'm a Toronto-based software engineer who specializes in
-                                building responsive and interactive digital experiences in
-                                both mobile and computer platforms.
+                            <p style={{ lineHeight: "1.6rem" }}>
+                                I'm a Toronto-based software engineer with almost 4 years of professional experience,
+                                I specialize in building efficient, scalable, and innovative solutions using modern technologies.
+                                My expertise spans full-stack development, React ecosystems, and cloud-native applications.
                             </p>
                         </div>
                         <div className="header_buttons_container">
@@ -116,20 +116,18 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                 </div>
             </header>
             <div className="home_about">
-                <SmallHeader color={Colors.secondary} text="About Me"/>
+                <SmallHeader color={Colors.secondary} text="About Me" />
                 <div className="center_text text_secondary">
                     <p id="center_text_top_id" style={{ ...styles.transitionStyle, opacity: 0 }}>
-                        Hi there! I'm Christian, a 21 year old from Toronto, Canada. What started from playing around with java as a kid, building simple applications for fun, developed in to a 
-                        love for programming.
+                        I've designed frameworks, developed UI component libraries, built mobile apps, and deployed robust backends with tools like TypeScript,
+                        Node.js, Docker, and AWS. Whether it's creating interactive web experiences, streamlining workflows, or delivering full-stack solutions,
+                        I'm driven by a commitment to quality and innovation.
                     </p>
 
-                    <img className="profile_photo" src="https://i.imgur.com/0KsBXiN.jpg" alt="me_posing"/>
+                    <img className="profile_photo" src="https://i.imgur.com/0KsBXiN.jpg" alt="me_posing" />
 
                     <p id="center_text_body1_id" style={{ ...styles.transitionStyle }}>
-                        Fast-forward to today, I am able to 
-                        make software on both <span style={{ color: "#fff" }}>mobile and computer platforms</span> using different programming 
-                        languages like JavaScript, Java, or Python. My main focus these days is building
-                        responsive and interactive websites using the <span style={{ color: "#fff" }}>MERN stack.</span>
+                        Feel free to explore my work and connect with me!
                     </p>
                     <p id="center_text_body2_id" style={styles.transitionStyle}>
                         Here are a few technologies I've been working with recently:
@@ -138,11 +136,11 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
                     <ul className="tech_ul_style" id="center_text_conclusion_id" style={styles.transitionStyle}>
                         <div>
                             <li>TypeScript</li>
-                            <li>Node.js</li>
-                            <li>React</li>
+                            <li>Kubernetes</li>
+                            <li>Docker</li>
                         </div>
                         <div>
-                            <li>React-Native</li>
+                            <li>AWS technologies (EC2/ECS/EKS)</li>
                             <li>MongoDB</li>
                             <li>Express</li>
                         </div>
@@ -151,7 +149,7 @@ const Home = ({ navHandler, nextOnClick, openProject }) => {
             </div>
 
             <div id="home_nextTab_Id" className="home_nextTab_container">
-                <NextTab 
+                <NextTab
                     text="Scroll To Next Page"
                     // color={Colors.secondary}
                     textColor="#fff"
